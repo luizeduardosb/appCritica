@@ -1,0 +1,50 @@
+#{extends 'main.html' /}
+#{set title:'Nova Critica' /}
+
+<form action="@{Criticas.salvar}">
+
+	<input type="hidden" name="c.id" value="${c?.id}">
+
+	<label>Usuario</label>
+	<input type="text" name="c.usuario" value="${c?.usuario}" placeholder="Digite como gostaria de ser chamado">
+	
+	<br>
+	<br>
+
+	<label>Game</label>
+	<input type="text" name="c.game" value="${c?.game}" placeholder="Sobre qual game deseja fazer sua crítica?">
+	
+	<br>
+	<br>
+
+	<label>Plataforma</label>
+	<select id="plataforma">
+		<option value=""></option>
+		<option value="play">PlayStation</option>
+		<option value="xbox">Xbox</option>
+		<option value="windows">Microsoft Windows</option>
+		<option value="linux">Linux</option>
+	</select>
+	
+	<br>
+	<br>
+
+	<label>Nota</label>
+	<input type="text" name="c.nota" value="${c?.nota}" placeholder="Qual a nota do game?">
+
+	<br>
+	<br>
+	
+	<label>Análise</label>
+	<textarea id="msg" name="c.analise" value="${c?.analise}" placeholder="Digite sua opinião sobre game" rows="4" cols="100"></textarea>
+	
+	<br>
+	<br>
+	
+	<input type="checkbox" name="c.spoiler" value="${c?.spoiler}">
+	<label>Marque caso sua análise contenha spoilers</label>
+	
+	<br>
+	<br>
+
+	<button>Enviar análise</button>

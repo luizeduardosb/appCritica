@@ -6,8 +6,8 @@
 	 
 	#{list items:lista, as:'c'}
     <tr>
-      ${c.id} | ${c.usuario} • ${c.game} • ${c.plataforma} • ${c.nota} • ${c.analise} • ${c.spoiler}| 
-      <a href='@{Criticas.editar(c.id)}'> Editar </a> - <a href='@{Criticas.deletar(c.id)}'> Deletar </a> </td>
+      ${c.id} | ${c.usuario} • ${c.game?.nome} • ${c.plataforma} • ${c.nota} • ${c.analise} • ${c.spoiler}| 
+      <a href='@{Criticas.editar(c.id)}'>Editar</a> - <a href='@{Criticas.deletar(c.id)}'>Deletar</a> </td>
 	<tr>
 		<br>
 	#{/list}

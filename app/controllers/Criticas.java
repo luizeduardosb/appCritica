@@ -3,12 +3,14 @@ package controllers;
 import java.util.List;
 
 import models.Critica;
+import models.Game;
 import play.mvc.Controller;
 
 public class Criticas extends Controller {
 	
 	public static void form() {
-		render();
+		List<Game> games = Game.findAll();
+		render(games);
 	}
 	
 	public static void salvar(Critica c) {
@@ -24,7 +26,9 @@ public class Criticas extends Controller {
 	
 	public static void editar(long id) {
 		Critica c = Critica.findById(id);
-		renderTemplate("Criticas/form.html", c);
+		List<Game> games = Game.findAll();
+		
+		renderTemplate("Criticas/form.html", c, games);
 	}
 	
 	public static void deletar(long id) {

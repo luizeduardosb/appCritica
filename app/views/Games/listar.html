@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Lista dos games' /}
+
+
+<form action="@{Games.listar}">
+
+	#{list items:lista, as:'g'}
+	<tr>
+		${g.nome} • ${g.genero} • ${g.desenvolvedor} • ${g.plataforma} • ${g.lancamento} |
+		<a href='@{Games.editar(g.id)}'>Editar</a> - <a href='@{Games.deletar(g.id)}'>Deletar</a> </td>
+	<tr>
+		<br>
+		#{/list}
+
+		</tbody>
+		</table>

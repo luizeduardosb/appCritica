@@ -1,0 +1,46 @@
+#{extends 'main.html' /}
+#{set title:'Adicionar Game' /}
+
+<form action="@{Games.salvar}">
+
+	<input type="hidden" name="g.id" value="${g?.id}">
+
+	<label>Game</label>
+	<input type="text" name="g.nome" value="${g?.nome}" placeholder="Digite o nome do game">
+
+	<label>Gênero</label>
+	<input type="text" name="g.genero" value="${g?.genero}" placeholder="Qual o gênero do game?">
+
+	<br>
+	<br>
+
+	<label>Desenvolvedor(a)</label>
+	<input type="text" name="g.desenvolvedor" value="${g?.desenvolvedor}"
+		placeholder="Qual o desenvolvedor(a) do game?">
+
+	<br>
+	<br>
+	
+	<label>Plataformas suportadas</label>
+	<br>
+	<input type="checkbox" name="g.plataforma" value="PlayStation">
+	<label>Playstation</label>
+
+	<input type="checkbox" name="g.plataforma" value="Xbox">
+	<label>Xbox</label>
+
+	<input type="checkbox" name="g.plataforma" value="Windows">
+	<label>Microsoft Windows</label>
+
+	<input type="checkbox" name="g.plataforma" value="Linux">
+	<label>Linux</label>
+
+
+	<br>
+	<br>
+	
+	<label>Data de lançamento</label>
+	<input type="date" name="g.lancamento" value="${g?.lancamento}">
+
+
+	<button>Adicionar game</button>

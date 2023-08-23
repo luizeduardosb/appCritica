@@ -7,13 +7,19 @@
 
 	<label>Usuario</label>
 	<input type="text" name="c.usuario" value="${c?.usuario}" placeholder="Digite como gostaria de ser chamado">
-	
+
 	<br>
 	<br>
 
 	<label>Game</label>
-	<input type="text" name="c.game" value="${c?.game}" placeholder="Sobre qual game deseja fazer sua crítica?">
-	
+	<select name="c.game.id">
+		<option></option>
+
+		#{list items:games, as:'g'}
+		<option value="${g.id}">${g.nome}</option>
+		#{/list}
+	</select>
+
 	<br>
 	<br>
 
@@ -25,7 +31,7 @@
 		<option value="Windows">Microsoft Windows</option>
 		<option value="Linux">Linux</option>
 	</select>
-	
+
 	<br>
 	<br>
 
@@ -34,16 +40,17 @@
 
 	<br>
 	<br>
-	
+
 	<label>Análise</label>
-	<textarea id="msg" name="c.analise" value="${c?.analise}" placeholder="Digite sua opinião sobre game" rows="4" cols="100"></textarea>
-	
+	<textarea id="msg" name="c.analise" value="${c?.analise}" placeholder="Digite sua opinião sobre game"></textarea>
+
 	<br>
 	<br>
-	
+
 	<input type="checkbox" name="c.spoiler" value="sim">
 	<label>Marque caso sua análise contenha spoilers</label>
-	
+
+
 	<br>
 	<br>
 

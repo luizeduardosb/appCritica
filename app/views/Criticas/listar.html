@@ -3,6 +3,18 @@
 
 
 <form action="@{Criticas.listar}">
+	
+	<!-- <input type="search" name="busca" value="${busca}" placeholder="Informe o termo de busca">
+	<br> -->
+	<label>Algumas análises podem conter spoilers, deseja que te salvemos de tal barbarie?</label>
+	<br>
+	<input type="checkbox" name="busca" value="nao"> Claro, não quero spoiler
+	<button>Buscar</button>
+	
+</form>	
+	
+	<br>
+	<br>
 	 
 	#{list items:lista, as:'c'}
     <tr>

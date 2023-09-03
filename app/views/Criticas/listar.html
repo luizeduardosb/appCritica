@@ -17,8 +17,18 @@
 	<br>
 	 
 	#{list items:lista, as:'c'}
+	
+	<div class="card" style="width: 18rem;">
+  <div class="card-body">
+	  <button type="button" class="btn btn-primary position-relative">${c.nota}</button>
+    <h5 class="card-title">${c.usuario}</h5>
+    <h6>${c.game?.nome}</h6>
+    <p class="card-text">${c.analise}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
     <tr>
-      ${c.id} | ${c.usuario} • ${c.game?.nome} • ${c.plataforma} • ${c.nota} • ${c.analise} • ${c.spoiler}| 
+     ${c.game?.nome} • ${c.plataforma} • ${c.nota} • ${c.analise} • ${c.spoiler}| 
       <a href='@{Criticas.editar(c.id)}'>Editar</a> - <a href='@{Criticas.deletar(c.id)}'>Deletar</a> </td>
 	<tr>
 		<br>

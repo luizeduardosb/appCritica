@@ -1,0 +1,12 @@
+body {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+	padding-top: 0;
+}
+
+.container-fluid {
+	background-color: #A9A9A9;
+}

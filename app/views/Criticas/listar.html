@@ -3,36 +3,52 @@
 
 
 <form action="@{Criticas.listar}">
-	
-	<!-- <input type="search" name="busca" value="${busca}" placeholder="Informe o termo de busca">
-	<br> -->
-	<label>Algumas análises podem conter spoilers, deseja que te salvemos de tal barbarie?</label>
+
+	<div class="corpo">
+
+		<div class="filtro">
+			<!-- <input type="search" name="busca" value="${busca}" placeholder="Informe o termo de busca">
 	<br>
-	<input type="checkbox" name="busca" value="nao"> Claro, não quero spoiler
-	<button>Buscar</button>
-	
-</form>	
-	
-	<br>
-	<br>
-	 
-	#{list items:lista, as:'c'}
-	
-	<div class="card" style="width: 18rem;">
-  <div class="card-body">
-	  <button type="button" class="btn btn-primary position-relative">${c.nota}</button>
-    <h5 class="card-title">${c.usuario}</h5>
-    <h6>${c.game?.nome}</h6>
-    <p class="card-text">${c.analise}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    <tr>
-     ${c.game?.nome} • ${c.plataforma} • ${c.nota} • ${c.analise} • ${c.spoiler}| 
-      <a href='@{Criticas.editar(c.id)}'>Editar</a> - <a href='@{Criticas.deletar(c.id)}'>Deletar</a> </td>
-	<tr>
-		<br>
-	#{/list}
-	
-  </tbody>
-</table>
+			<label>Filtrar por:</label>
+			
+			<br>
+
+			<label>Game</label>
+			<select name="busca">
+				<option></option>
+				#{list items:games, as:'g'}
+				<option value="${g.id}">${g.nome}</option>
+				#{/list}
+			</select>
+			-->
+
+			<label>Algumas análises podem conter spoilers, deseja que te salvemos de tal barbarie?</label>
+			<br>
+			<input type="checkbox" name="busca" value="nao"> Claro, não quero spoiler
+			<button>Buscar</button>
+		</div>
+
+		<div class="criticas">
+			#{list items:lista, as:'c'}
+			<div class="card col-5">
+				<div class="card-body">
+					<button type="button" class="btn btn-primary position-relative col-2">${c.nota}</button>
+					<div class="info col-10">
+						<h5 class="card-title">${c.game?.nome}</h5>
+						<h6>${c.usuario}</h6>
+					</div>
+					<h6 class="plat">${c.plataforma}</h6>
+					<p class="card-text">${c.analise}</p>
+					<button type="button" class="btn btn-outline-secondary edit"> <a
+							href='@{Criticas.editar(c.id)}'>Editar</a></button>
+					<button type="button" class="btn btn-outline-secondary del"> <a
+							href='@{Criticas.deletar(c.id)}'>Deletar</a></button>
+				</div>
+			</div>
+			#{/list}
+		</div>
+		<div class="copy">
+			<h6>&copy; Luiz Eduardo e Daniel Filho</h5>
+		</div>
+	</div>
+</form>

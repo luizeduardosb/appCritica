@@ -1,6 +1,10 @@
-body {
-	margin-left: 5%;
-	margin-right: 5%;
+.corpo {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.copy {
+	text-align: center;
 }
 
 .navbar.navbar-expand-lg.bg-body-tertiary {
@@ -8,5 +12,95 @@ body {
 }
 
 .container-fluid {
+	background-color: black;
+	text-transform: uppercase;
+	padding-left: 15%;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+#logo {
+	width: 10%;
+}
+
+.navbar-brand {
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+li.nav-item a {
+	background-color: white;
+}
+
+.btn.btn-outline-secondary.edit {
 	background-color: #A9A9A9;
+}
+
+
+.btn.btn-outline-secondary.edit a {
+	color: white;
+	text-decoration: none;
+}
+
+.btn.btn-outline-secondary.del {
+	background-color: red;
+}
+
+.btn.btn-outline-secondary.del a {
+	color: white;
+	text-decoration: none;
+
+}
+
+.card {
+	float: right;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+
+
+.card h6 {
+	margin-top: 1%;
+}
+
+h5.card-title {
+	font-weight: bold;
+	margin-bottom: 1%;
+}
+
+.info.col-10 {
+	float: right;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-left: 2%;
+	font-weight: bold;
+}
+
+.info.col-10 h6 {
+	margin: 0;
+}
+
+
+.btn.btn-primary.position-relative.col-2 {
+	background-color: black;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 0;
+
+}
+
+h6.plat {
+	margin-top: 2%;
+}
+
+.filtro {
+	margin-bottom: 2%;
+}
+
+.criticas {
+	margin-left: -12%;
+	margin-right: 0;
 }

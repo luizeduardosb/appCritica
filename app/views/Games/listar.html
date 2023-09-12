@@ -4,13 +4,29 @@
 
 <form action="@{Games.listar}">
 
-	#{list items:lista, as:'g'}
-	<tr>
-		${g.nome} • ${g.genero} • ${g.desenvolvedor} • ${g.plataforma} • ${g.lancamento} |
-		<a href='@{Games.editar(g.id)}'>Editar</a> - <a href='@{Games.deletar(g.id)}'>Deletar</a> </td>
-	<tr>
-		<br>
-		#{/list}
 
-		</tbody>
-		</table>
+
+	
+	
+		
+		
+	
+		#{list items:lista, as:'g'}
+		<div class="container bg-tertiary-color text-dark-text-emphasis">
+		<div style="position: relative; right: 27%;" class="card">
+  <h1 class="card-header">${g.nome}</h1>
+  <div class="card-body">
+    <h4 class="card-title">${g.desenvolvedor}</h4>
+    <p class="card-text">G�nero: ${g.genero}</p> 
+    <p class="card-text">Platafomas supotadas: ${g.plataforma}</p>
+    <p class="card-text">Data de lan�amento: ${g.lancamento}</p>
+     
+    <a class="btn btn-warning" role="button" href='@{Games.editar(g.id)}'>Editar</a> <a class="btn btn-danger" role="button" href='@{Games.deletar(g.id)}'>Deletar</a>
+  </div>
+</div>
+</div>
+	#{/list}
+	
+</form>
+		
+		

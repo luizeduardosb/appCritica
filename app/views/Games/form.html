@@ -1,46 +1,81 @@
 #{extends 'main.html' /}
 #{set title:'Adicionar Game' /}
 
+<div class="container bg-tertiary-color text-dark-text-emphasis">
+
 <form action="@{Games.salvar}">
 
 	<input type="hidden" name="g.id" value="${g?.id}">
-
-	<label>Game</label>
-	<input type="text" name="g.nome" value="${g?.nome}" placeholder="Digite o nome do game">
-
-	<label>Gênero</label>
-	<input type="text" name="g.genero" value="${g?.genero}" placeholder="Qual o gênero do game?">
+    <br>
+	<br>
+    
+    <div class="col">
+    <label class="form-label">Jogo</label>
+    <input name="g.nome" value="${g?.nome}" type="text" class="form-control" placeholder="Digite o nome do game">
+  </div>
+	
+    
+    
+    <br>
+	<br>
+	<div class="col">
+    <label class="form-label">Gênero</label>
+    <input name="g.genero" value="${g?.genero}" type="text" class="form-control" placeholder="Qual o gênero do game?">
+  </div>
+	
 
 	<br>
 	<br>
-
-	<label>Desenvolvedor(a)</label>
-	<input type="text" name="g.desenvolvedor" value="${g?.desenvolvedor}"
-		placeholder="Qual o desenvolvedor(a) do game?">
-
-	<br>
-	<br>
-
-	<label>Plataformas suportadas</label>
-	<br>
-	<input type="checkbox" name="g.plataforma" value="PlayStation">
-	<label>Playstation</label>
-
-	<input type="checkbox" name="g.plataforma" value="Xbox">
-	<label>Xbox</label>
-
-	<input type="checkbox" name="g.plataforma" value="Windows">
-	<label>Microsoft Windows</label>
-
-	<input type="checkbox" name="g.plataforma" value="Linux">
-	<label>Linux</label>
-
+    
+    <div class="col">
+    <label class="form-label">Desenvolvedor(a)</label>
+    <input name="g.desenvolvedor" value="${g?.desenvolvedor}" type="text" class="form-control" placeholder="Qual o desenvolvedor(a) do game?">
+  </div>
+	
 
 	<br>
 	<br>
+	
+	<label class="form-label">Plataformas suportadas</label>
+	<div class="form-check">
+  <input name="g.plataforma" class="form-check-input" type="checkbox" value="PlayStation" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Playstation
+  </label>
+</div>
+<div class="form-check">
+  <input name="g.plataforma" class="form-check-input" type="checkbox" value="Xbox" id="flexCheckChecked">
+  <label class="form-check-label" for="flexCheckChecked">
+    Xbox
+  </label>
+</div>
+<div class="form-check">
+  <input name="g.plataforma" class="form-check-input" type="checkbox" value="Windows" id="flexCheckChecked">
+  <label class="form-check-label" for="flexCheckChecked">
+    Microsoft Windows
+  </label>
+</div>
+<div class="form-check">
+  <input name="g.plataforma" class="form-check-input" type="checkbox" value="Linux" id="flexCheckChecked">
+  <label class="form-check-label" for="flexCheckChecked">
+    Linux
+  </label>
+</div>
 
-	<label>Data de lançamento</label>
-	<input type="date" name="g.lancamento" value="${g?.lancamento}">
 
 
-	<button>Adicionar game</button>
+	<br>
+	<br>
+<div class="col">
+    <label class="form-label">Data de lançamento</label>
+    <input name="g.lancamento" value="${g?.lancamento}" type="date" class="form-control" name="g.lancamento" value="${g?.lancamento}">
+  </div>
+	
+<br>
+	<br>
+
+	<button class="btn btn-primary" type="submit">Enviar jogo]</button>
+	<br>
+	<br>
+	</form>
+	</div>

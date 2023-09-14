@@ -20,15 +20,7 @@ public class Criticas extends Controller {
 
 		public static void listar() {
 		String busca = params.get("busca");
-		List<Game> games = Game.findAll();
-		
 		List<Critica> lista = Critica.findAll();
-		/* if (busca == null || busca.isEmpty()) {
-			lista = Critica.findAll();			
-		} else {
-			lista = Critica.find("lower(usuario) like ?1",
-					"%"+ busca.toLowerCase() +"%").fetch();
-		} */
 		
 		if (busca == null || busca.isEmpty()) {
 			lista = Critica.findAll();			
@@ -37,7 +29,7 @@ public class Criticas extends Controller {
 					"%"+ busca.toLowerCase() +"%").fetch();
 		}	
 			
-		render(lista, busca, games);
+		render(lista, busca);
 		
 	}
 

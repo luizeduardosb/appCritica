@@ -17,10 +17,18 @@ public class Games extends Controller {
 		form();
 	}
 	
-	public static void listar() {		
+	public static void listar() {
+		String busca = params.get("busca");
 		List<Game> lista = Game.findAll();
+		
+		if (busca == null || busca.isEmpty()) {
+			lista = Game.findAll();			
+		} else {
+			lista = Game.find("lower(nome) like ?1",
+					"%"+ busca.toLowerCase() +"%").fetch();
+		}
 
-		render(lista);	
+		render(lista, busca);	
 	}
 	
 	public static void editar(long id) {

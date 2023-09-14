@@ -29,27 +29,38 @@
 	font-size: 30px;
 }
 
-li.nav-item a {
-	background-color: white;
+a.navbar-brand:hover {
+	color: white;
+}
+
+.navbar-nav .nav-link.active {
+	color: white;
+	font-weight: bold;
 }
 
 .btn.btn-outline-secondary.edit {
-	background-color: #A9A9A9;
+	background-color: #ffc107;
+	border: 0;
+}
+
+input.form-check-input {
+	border: 1px solid black;
 }
 
 
 .btn.btn-outline-secondary.edit a {
-	color: white;
 	text-decoration: none;
+	color: black;
 }
 
 .btn.btn-outline-secondary.del {
-	background-color: red;
+	background-color: #dc3545;
+	border: 0;
 }
 
 .btn.btn-outline-secondary.del a {
-	color: white;
 	text-decoration: none;
+	color: white;
 
 }
 
@@ -99,9 +110,50 @@ h6.plat {
 
 .filtro {
 	margin-bottom: 2%;
+	padding-left: 12%;
 }
 
 .criticas {
-	margin-left: -12%;
-	margin-right: 0;
+	margin-right: 3%;
+	margin-left: 2%;
+}
+
+
+div.container.bg-tertiary-color.text-dark-text-emphasis {
+	padding-top: 20px;
+
+}
+
+.critica-form {
+	margin-left: 20%;
+	margin-right: 20;
+}
+
+#txt-spo {
+	margin-top: 15px;
+}
+
+#submit {
+	margin-top: 15px;
+}
+
+#check {
+	padding-left: 0;
+
+}
+
+.check {
+	margin-left: 24px;
+}
+
+#data {
+	margin-top: 15px;
+}
+
+input.form-control {
+	margin-left: 18%;
+}
+
+#busca-game {
+	margin-left: 9%;
 }

@@ -1,59 +1,41 @@
 #{extends 'main.html' /}
 #{set title:'Avaliações dos games' /}
 
-
 <form action="@{Criticas.listar}">
-
 	<div class="corpo">
-
 		<div class="filtro">
-			<!-- <input type="search" name="busca" value="${busca}" placeholder="Informe o termo de busca">
-	<br>
-			<label>Filtrar por:</label>
-			
-			<br>
 
-			<label>Game</label>
-			<select name="busca">
-				<option></option>
-				#{list items:games, as:'g'}
-				<option value="${g.id}">${g.nome}</option>
-				#{/list}
-			</select>
-			-->
-
-			<label>Algumas análises podem conter spoilers, deseja que te salvemos de tal barbarie?</label>
-			<br>
-			<input type="checkbox" name="busca" value="nao"> Claro, não quero spoiler
-			<button class="btn btn-primary">Buscar</button>
+			<div id="check" class="form-check">
+				<div class="check">
+					<input class="form-check-input" type="checkbox" name="busca" value="nao" id="flexCheckChecked">
+					<label class="form-check-label" for="flexCheckChecked">
+						Marque caso não deseja receber spoilers
+					</label>
+				</div>
+				<div class="col-12">
+					<button id="submit" class="btn btn-primary" type="submit">Filtrar</button>
+				</div>
+			</div>
 		</div>
-		
-	</div>
-	
-	
-	
-	<div class="criticas">
-			#{list items:lista, as:'c'}
-	<div class="container bg-tertiary-color text-dark-text-emphasis">
-		<div style="position: relative; right: 27%;" class="card">
-  <h1 class="card-header">${c.nota}</h1>
-  <div class="card-body">
-    <h4 class="card-title">${c.game?.nome}</h4>
-    <p class="card-text">Usuario: @${c.usuario}</p> 
-    <p class="card-text">Platafomas supotadas: ${c.plataforma}</p>
-    <p class="card-text">Analise: ${c.analise}</p>
-    
-     
-    <a class="btn btn-warning" role="button" href='@{Criticas.editar(c.id)}'>Editar</a> <a class="btn btn-danger" role="button" href='@{Criticas.deletar(c.id)}'>Deletar</a>
-  </div>
-</div>
-</div>
 
+		<div class="criticas">
+			#{list items:lista, as:'c'}
+			<div class="card col-5">
+				<div class="card-body">
+					<button type="button" class="btn btn-primary position-relative col-2">${c.nota}</button>
+					<div class="info col-10">
+						<h5 class="card-title">${c.game?.nome}</h5>
+						<h6>@${c.usuario}</h6>
+					</div>
+					<h6 class="plat">${c.plataforma}</h6>
+					<p class="card-text">${c.analise}</p>
+					<button type="button" class="btn btn-outline-secondary edit"> <a
+							href='@{Criticas.editar(c.id)}'>Editar</a></button>
+					<button type="button" class="btn btn-outline-secondary del"> <a
+							href='@{Criticas.deletar(c.id)}'>Deletar</a></button>
+				</div>
+			</div>
 			#{/list}
+		</div>
 	</div>
 </form>
-<div class="container-xxl"><h6 style="position: relative; bottom: 100%;">&copy; Luiz Eduardo e Daniel Filho</h6></div>
-
-
-
-

@@ -1,32 +1,35 @@
 #{extends 'main.html' /}
-#{set title:'Lista dos games' /}
-
+#{set title:'Lista de games' /}
 
 <form action="@{Games.listar}">
+	<div class="corpo">
+		<div class="filtrog">
+			<div class="row">
+				<div class="col-7">
+					<input class="form-control" type="text" name="busca" value="${busca}"
+						placeholder="Informe o nome do game"/>
+				</div>
+				<div id="busca-game" class="col-3">
+					<input type="submit" class="btn btn-primary mb-3" value="Buscar" />
+				</div>
+			</div>
+		</div>
 
+		<div class="games">
+			#{list items:lista, as:'g'}
+			<div id="card-game" class="card col-5">
+				<h1 class="card-header">${g.nome}</h1>
+				<div class="card-body">
+					<h4 class="card-title">${g.desenvolvedor}</h4>
+					<p class="card-text">GÃªnero: ${g.genero}</p>
+					<p class="card-text">Platafomas supotadas: ${g.plataforma}</p>
+					<p class="card-text">Data de lanÃ§amento: ${g.lancamento}</p>
 
-
-	
-	
-		
-		
-	
-		#{list items:lista, as:'g'}
-		<div class="container bg-tertiary-color text-dark-text-emphasis">
-		<div style="position: relative; right: 27%;" class="card">
-  <h1 class="card-header">${g.nome}</h1>
-  <div class="card-body">
-    <h4 class="card-title">${g.desenvolvedor}</h4>
-    <p class="card-text">Gênero: ${g.genero}</p> 
-    <p class="card-text">Platafomas supotadas: ${g.plataforma}</p>
-    <p class="card-text">Data de lançamento: ${g.lancamento}</p>
-     
-    <a class="btn btn-warning" role="button" href='@{Games.editar(g.id)}'>Editar</a> <a class="btn btn-danger" role="button" href='@{Games.deletar(g.id)}'>Deletar</a>
-  </div>
-</div>
-</div>
-	#{/list}
-	
+					<a class="btn btn-warning" role="button" href='@{Games.editar(g.id)}'>Editar</a> <a
+						class="btn btn-danger" role="button" href='@{Games.deletar(g.id)}'>Deletar</a>
+				</div>
+			</div>
+			#{/list}
+		</div>
+	</div>
 </form>
-		
-		

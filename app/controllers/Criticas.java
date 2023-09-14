@@ -15,7 +15,7 @@ public class Criticas extends Controller {
 
 	public static void salvar(Critica c) {
 		c.save();
-		form();
+		listar();
 	}
 
 		public static void listar() {

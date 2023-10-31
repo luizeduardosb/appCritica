@@ -17,18 +17,10 @@ public class Games extends Controller {
 		form();
 	}
 	
-	public static void listar() {
-		String busca = params.get("busca");
+	public static void home() {
 		List<Game> lista = Game.findAll();
-		
-		if (busca == null || busca.isEmpty()) {
-			lista = Game.findAll();			
-		} else {
-			lista = Game.find("lower(nome) like ?1",
-					"%"+ busca.toLowerCase() +"%").fetch();
-		}
 
-		render(lista, busca);	
+		render(lista);	
 	}
 	
 	public static void editar(long id) {
@@ -41,7 +33,7 @@ public class Games extends Controller {
 		g.delete();
 		
 		
-		listar();
+		home();
 	}
 	
 }

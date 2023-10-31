@@ -1,159 +1,141 @@
-.corpo {
-	margin-left: 15%;
-	margin-right: 15%;
+body {
+	background-color: #1f1f1f;
+	color: white;
 }
 
-.copy {
+body::-webkit-scrollbar {
+	display: none;
+}
+
+header {
 	text-align: center;
+	height: 100px;
+	background-color: rgb(14, 14, 14);
+	align-items: center;
 }
 
-.navbar.navbar-expand-lg.bg-body-tertiary {
-	padding-top: 0;
+header h1 {
+	padding-top: 20px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 6vh;
 }
 
-.container-fluid {
+header img {
+	width: 60px;
+}
+
+.menu {
+	text-align: center;
+	padding: 15px 0;
+	margin: 0 17%;
+	border-top: 3px solid white;
+}
+
+.menu a {
+	text-decoration: none;
+	padding: 0 30px;
+	color: white;
+	font-weight: bold;
+	font-size: 3vh;
+}
+
+section#contato {
+	text-align: center;
+	padding: 20px 0;
 	background-color: black;
+}
+
+section#contato h3 {
 	text-transform: uppercase;
-	padding-left: 15%;
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
-#logo {
-	width: 10%;
-}
-
-.navbar-brand {
-	color: white;
-	font-weight: bold;
-	font-size: 30px;
-}
-
-a.navbar-brand:hover {
-	color: white;
-}
-
-.navbar-nav .nav-link.active {
-	color: white;
 	font-weight: bold;
 }
 
-.btn.btn-outline-secondary.edit {
-	background-color: #ffc107;
-	border: 0;
-}
 
-input.form-check-input {
-	border: 1px solid black;
-}
-
-
-.btn.btn-outline-secondary.edit a {
-	text-decoration: none;
-	color: black;
-}
-
-.btn.btn-outline-secondary.del {
-	background-color: #dc3545;
-	border: 0;
-}
-
-.btn.btn-outline-secondary.del a {
-	text-decoration: none;
-	color: white;
-
-}
-
-.card {
-	float: right;
-	margin-left: 2%;
-	margin-right: 2%;
-	margin-bottom: 2%;
-}
-
-
-.card h6 {
-	margin-top: 1%;
-}
-
-h5.card-title {
-	font-weight: bold;
-	margin-bottom: 1%;
-}
-
-.info.col-10 {
-	float: right;
-	margin-right: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding-left: 2%;
-	font-weight: bold;
-}
-
-.info.col-10 h6 {
+.contato ul {
+	display: flex;
+	text-align: center;
+	padding-left: 25%;
+	padding-top: 20px;
 	margin: 0;
 }
 
+.contato li {
+	list-style-type: none;
+	padding: 0px 60px;
+}
 
-.btn.btn-primary.position-relative.col-2 {
-	background-color: black;
+footer {
+	background-color: white;
+	text-align: center;
+	color: black;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+section#carrossel {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+section#plataformas {
+	text-align: center;
+	padding: 40px 0;
+}
+
+section#plataformas h3 {
+	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 30px;
-	padding: 0;
-	border: 0;
-
-}
-
-h6.plat {
-	margin-top: 2%;
-}
-
-.filtro {
-	margin-bottom: 2%;
-	padding-left: 12%;
-}
-
-.criticas {
-	margin-right: 3%;
-	margin-left: 2%;
 }
 
 
-div.container.bg-tertiary-color.text-dark-text-emphasis {
+.plataformas ul {
+	display: flex;
+	text-align: center;
+	padding-left: 25%;
 	padding-top: 20px;
-
 }
 
-.critica-form {
-	margin-left: 20%;
-	margin-right: 20;
+.plataformas li {
+	list-style-type: none;
+	padding: 10px 40px;
 }
 
-#txt-spo {
-	margin-top: 15px;
+.plataformas img {
+	width: 100px;
 }
 
-#submit {
-	margin-top: 15px;
+#xbox p {
+	padding-top: 10px;
 }
 
-#check {
-	padding-left: 0;
-
+#ximg {
+	width: 90px;
+	padding-top: 5px;
 }
 
-.check {
-	margin-left: 24px;
+#play p {
+	padding-top: 12px;
 }
 
-#data {
-	margin-top: 15px;
+#pimg {
+	width: 115px;
+	padding-top: 5px;
 }
 
-input.form-control {
-	margin-left: 18%;
+#wind {
+	padding-top: 2px;
 }
 
-#busca-game {
-	margin-left: 9%;
+#wind p {
+	padding-top: 5px;
+}
+
+#wimg {
+	width: 110px;
+}
+
+#switch p {
+	padding-top: 5px;
 }

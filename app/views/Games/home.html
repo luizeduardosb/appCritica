@@ -1,0 +1,110 @@
+#{extends 'main.html' /}
+#{set title:'LDCritcs' /}
+
+<form action="@{Games.home}">
+
+	<section id="carrossel">
+		<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="/public/images/senua-home.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Hellblade: Senua's Sacrifice</h5>
+						<p>Uma viagem brutal de uma guerreira até ao mito e a loucura</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/public/images/redDead-home.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Red Dead Redemption 2</h5>
+						<p>Estados Unidos, 1899. O fim da era do velho oeste</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/public/images/cod-home.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Call of Duty: WWII</h5>
+						<p>Desembarque em Normandia, Dia D e envolva-se na a maior guerra da história do planeta</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/public/images/forza-home.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Forza Horizon 5</h5>
+						<p>Explore as paisagens do mundo aberto vibrante e em constante evolução do México</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+			data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+			data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+		</div>
+	</section>
+
+	<section id="plataformas">
+		<h3>Plataformas</h3>
+		<div class="plataformas">
+			<ul>
+				<li id="xbox">
+					<img id="ximg" src="/public/images/xbox.png">
+					<p>Xbox</p>
+				</li>
+				<li id="play">
+					<img id="pimg" src="/public/images/play.png">
+					<p>PlayStation</p>
+				</li>
+				<li id="wind">
+					<img id="wimg" src="/public/images/windows.png">
+					<p>Windows</p>
+				</li>
+				<li id="switch">
+					<img src="/public/images/switch.png">
+					<p>Switch</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section id="jogos">
+		<div class="corpo">
+		<div class="filtrog">
+			<div class="row">
+				<div class="col-7">
+					<input class="form-control" type="text" name="busca" value="${busca}"
+						placeholder="Informe o nome do game"/>
+				</div>
+				<div id="busca-game" class="col-3">
+					<input type="submit" class="btn btn-primary mb-3" value="Buscar" />
+				</div>
+			</div>
+		</div>
+
+		<div class="games">
+			#{list items:lista, as:'g'}
+			<div id="card-game" class="card col-5">
+				<h1 class="card-header">${g.nome}</h1>
+				<div class="card-body">
+					<h4 class="card-title">${g.desenvolvedor}</h4>
+					<p class="card-text">Gênero: ${g.genero}</p>
+					<p class="card-text">Platafomas supotadas: ${g.plataforma}</p>
+					<p class="card-text">Data de lançamento: ${g.lancamento}</p>
+
+					<a class="btn btn-warning" role="button" href='@{Games.editar(g.id)}'>Editar</a> <a
+						class="btn btn-danger" role="button" href='@{Games.deletar(g.id)}'>Deletar</a>
+				</div>
+			</div>
+			#{/list}
+		</div>
+	</div>
+		
+	</section>
+
+</form>

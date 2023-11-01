@@ -4,6 +4,7 @@ import java.util.Date;
 
 import models.Critica;
 import models.Game;
+import models.Usuario;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 
@@ -45,6 +46,30 @@ public class Inicializador extends Job {
 					+ "de outro planeta, sentimentos que nunca vi antes";
 			um.spoiler = "nao";
 			um.save();
+			
+			Critica dois = new Critica();
+			dois.usuario = "leco";
+			dois.plataforma = "Xbox";
+			dois.nota = "92";
+			dois.analise = "Massinha, mas bem mais ou menos, histórinha chata, o cara lá morre";
+			dois.spoiler = "sim";
+			dois.save();
+		}
+		
+		if (Usuario.count() == 0) {
+			Usuario dudu = new Usuario();
+			dudu.usuario = "@dudu";
+			dudu.senha = "dudu";
+			dudu.perfil = "admin";
+			
+			Usuario danilo = new Usuario();
+			danilo.usuario = "@danilo";
+			danilo.senha = "danilo";
+			danilo.perfil = "admin";
+			
+			Usuario lukita = new Usuario();
+			lukita.usuario = "@lukita";
+			lukita.senha = "lukita";
 		}
 	}
 

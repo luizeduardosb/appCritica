@@ -14,8 +14,11 @@ public class Games extends Controller {
 		render();
 	}
 	
-	public static void salvar(Game g, File foto) {
-
+	public static void salvar(Game g, File foto, Long idCritica) {
+		if (idCritica != null) {
+			Critica c = Critica.findById(idCritica);
+			g.criticas.add(c);
+		}
 		
 		g.nomeFoto = foto.getName();
 		g.save();
@@ -34,13 +37,23 @@ public class Games extends Controller {
 	
 	public static void home() {
 		List<Game> lista = Game.findAll();
+		List<Critica> criticas = Critica.findAll();
 
-		render(lista);	
+		renderTemplate("Games/home.html", lista, criticas);	
+	}
+	
+	public static void detalhar(Long id) {
+		Game game = Game.findById(id);
+		List<Critica> criticas = Critica.findAll();
+		
+		renderTemplate("Games/detalhar.html", game, criticas);
 	}
 	
 	public static void editar(long id) {
 		Game g = Game.findById(id);
-		renderTemplate("Games/form.html", g);
+		List<Critica> criticas = Critica.findAll();
+		
+		renderTemplate("Games/form.html", g, criticas);
 	}
 	
 	public static void deletar(long id) {
@@ -51,4 +64,12 @@ public class Games extends Controller {
 		home();
 	}
 	
+	public static void removerCritica(Long idGame, Long idCritica) {
+		Game g = Game.findById(idGame);
+		Critica c = Critica.findById(idCritica);
+		
+		g.criticas.remove(c);
+		g.save();
+		editar(g.id);
+	}
 }

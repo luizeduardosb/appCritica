@@ -1,11 +1,14 @@
 package models;
 
 import java.util.Date;
+import java.util.List;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,6 +27,10 @@ public class Game extends Model {
 	
 	@Temporal(TemporalType.DATE)
 	public Date lancamento;
+	
+	@OneToMany
+	@JoinColumn(name="idGame")
+	public List<Critica> criticas;
 	
 	
 

@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Cadastrar Usuário' /}
+
+<form action="@{Usuarios.salvar}">
+
+	<input type="hidden" name="c.id" value="${c?.id}">
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="basic-addon1">@</span>
+		<input type="text" name="usu.usuario" value="${c?.usuario}" class="form-control" placeholder="Úsuario"
+			aria-label="Username" aria-describedby="basic-addon1" required>
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="basic-addon1">bla</span>
+		<input type="password" name="usu.senha" value="${usu?.senha}" class="form-control" placeholder="Senha"
+			aria-label="Senha" aria-describedby="basic-addon1" required>
+	</div>
+
+	<div id="submit" class="col-12">
+		<button class="btn btn-primary" type="submit">Cadastrar-se</button>
+	</div>
+</form>

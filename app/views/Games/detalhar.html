@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Detalhar game'/}
+
+<form action="@{Games.detalhar}">
+
+<div class="card mt-3">
+	<div class="card-header">
+		#{get 'title' /}: #${game.id}
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">${game.nome}</h5>
+		<p class="card-text">${game.genero}</p>
+		<p class="card-text">${game.desenvolvedor}</p>
+		<p class="card-text">${game.plataforma}</p>
+		<p class="card-text">${game.descricao}</p>
+		<p class="card-text">${game.lancamento.format('dd/MM/yyyy')}</p>
+			#{if g?.id}
+				#{list items:g.criticas, as:'c2'}
+					<p>${c2.usuario}</p>
+					<a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
+				#{/list}
+			#{/if}
+		<a href="/games/form" class="btn btn-primary">Adicionar game</a>
+		<a href="@{games.home}" class="btn btn-primary">Home</a>
+	</div>
+</div>
+
+</form>

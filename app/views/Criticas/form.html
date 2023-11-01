@@ -1,4 +1,4 @@
-#{extends 'main.html' /} 
+#{extends 'main.html' /}
 #{set title:'Nova Critica' /}
 
 <div class="container bg-tertiary-color text-dark-text-emphasis col-6">
@@ -14,11 +14,12 @@
 		</div>
 
 		<div class="input-group mb-3">
-			<span class="input-group-text" id="basic-addon1">Jogo</span>
+			<span class="input-group-text" id="basic-addon1">Game</span>
 			<select name="c.game.id" class="form-select" aria-label="Default select example">
 				<option selected>Abra este menu de seleção</option>
 				#{list items:games, as:'g'}
-				<option value="${g.id}">${g.nome}</option> #{/list}
+				<option value="${g.id}" #{if c?.game?.id == g.id} selected #{/if}>${g.nome}</option>
+				#{/list}
 			</select>
 		</div>
 

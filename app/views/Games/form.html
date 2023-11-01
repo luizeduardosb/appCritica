@@ -19,6 +19,15 @@
 				placeholder="Qual o gênero do game?" aria-label="Username" aria-describedby="basic-addon1" required>
 		</div>
 
+		#{if g?.id}
+		#{list items:criticas, as:'c'}
+		<div>
+			<input type="checkbox" value="${c.id}" name="idCritica" />
+			<label>${c.usuario}</label>
+		</div>
+		#{/list}
+		#{/if}
+
 		<div class="input-group mb-3">
 			<span class="input-group-text" id="basic-addon1">Desenvolvedor(a)</span>
 			<input type="text" name="g.desenvolvedor" value="${g?.desenvolvedor}" class="form-control"
@@ -76,4 +85,11 @@
 		</div>
 
 	</form>
+
+	#{if g?.id}
+		#{list items:g.criticas, as:'c2'}
+			<a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
+			<p>${c2.usuario}</p>
+		#{/list}
+	#{/if}
 </div>

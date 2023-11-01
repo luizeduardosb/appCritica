@@ -87,12 +87,21 @@
 				</div>
 
 				<div class="infoGame">
-					<h5>${g.nome}</h5>
+					<a href="@{Games.detalhar(g.id)}">
+						<h5>${g.nome}</h5>
+					</a>
 					<h6>${g.desenvolvedor}</h6>
 					<p>${g.genero}</p>
 					<div id="plataformaGame">
 						<p>${g.plataforma}</p>
 					</div>
+
+					#{if g?.id}
+						#{list items:g.criticas, as:'c2'}
+							<p>${c2.usuario}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
+						#{/list}
+					#{/if}
+
 					<div id="acoesGame">
 						<a id="editarGame" href='@{Games.editar(g.id)}'>Editar</a>
 						<a id="deletarGame" href='@{Games.deletar(g.id)}'>Deletar</a>
@@ -109,7 +118,8 @@
 				</div>
 
 				<div class="infoNews">
-					<a href="https://canaltech.com.br/games/games-de-2023-estao-com-as-melhores-notas-dos-ultimos-20-anos-268531/">
+					<a
+						href="https://canaltech.com.br/games/games-de-2023-estao-com-as-melhores-notas-dos-ultimos-20-anos-268531/">
 						<h5>Games de 2023 estão com as melhores notas dos últimos 20 anos</h5>
 					</a>
 
@@ -124,7 +134,8 @@
 				</div>
 
 				<div class="infoNews">
-					<a href="https://www.tecmundo.com.br/voxel/266542-guia-xbox-game-pass-conheca-planos-precos-beneficios.htm">
+					<a
+						href="https://www.tecmundo.com.br/voxel/266542-guia-xbox-game-pass-conheca-planos-precos-beneficios.htm">
 						<h5>Xbox Game Pass: conheça as vantagens, beneficios, planos e preços</h5>
 					</a>
 
@@ -134,6 +145,6 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section id="divi"></section>
 </form>

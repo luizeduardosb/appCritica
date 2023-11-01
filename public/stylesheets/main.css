@@ -20,6 +20,11 @@ header h1 {
 	font-size: 6vh;
 }
 
+header a {
+	color: white;
+	text-decoration: none;
+}
+
 header img {
 	width: 60px;
 }
@@ -29,6 +34,7 @@ header img {
 	padding: 15px 0;
 	margin: 0 17%;
 	border-top: 3px solid white;
+	text-transform: uppercase;
 }
 
 .menu a {
@@ -36,38 +42,41 @@ header img {
 	padding: 0 30px;
 	color: white;
 	font-weight: bold;
-	font-size: 3vh;
+	font-size: 13px;
+}
+
+#divi {
+	margin: 0 20%;
+	border-bottom: 3px solid white;
 }
 
 section#contato {
 	text-align: center;
-	padding: 20px 0;
-	background-color: black;
-}
-
-section#contato h3 {
-	text-transform: uppercase;
-	font-weight: bold;
+	padding: 40px 0;
+	background-color: rgb(14, 14, 14);
 }
 
 
 .contato ul {
 	display: flex;
 	text-align: center;
-	padding-left: 25%;
+	padding-left: 20%;
+	padding-right: 20%;
 	padding-top: 20px;
 	margin: 0;
 }
 
 .contato li {
 	list-style-type: none;
-	padding: 0px 60px;
+	padding: 0px 40px;
+	width: 40%;
 }
 
 footer {
 	background-color: white;
 	text-align: center;
 	color: black;
+	padding: 3px 0;
 }
 
 footer p {
@@ -82,6 +91,7 @@ section#carrossel {
 section#plataformas {
 	text-align: center;
 	padding: 40px 0;
+	margin: 0 20%;
 }
 
 section#plataformas h3 {
@@ -93,13 +103,15 @@ section#plataformas h3 {
 .plataformas ul {
 	display: flex;
 	text-align: center;
-	padding-left: 25%;
-	padding-top: 20px;
+	padding-top: 10px;
+	padding-left: 0;
+
 }
 
 .plataformas li {
 	list-style-type: none;
 	padding: 10px 40px;
+	width: 30%;
 }
 
 .plataformas img {
@@ -138,4 +150,109 @@ section#plataformas h3 {
 
 #switch p {
 	padding-top: 5px;
+}
+
+section#jogos {
+	display: flex;
+	padding: 0 0 40px 0;
+	margin: 0 5%;
+}
+
+.games {
+	width: 55%;
+	padding: 0;
+}
+
+.game {
+	display: flex;
+	margin-bottom: 20px;
+	background-color: rgb(38, 38, 38);
+	border: 1px solid black;
+	color: white;
+}
+
+.game p {
+	color: gray;
+	margin: 0;
+	text-align: justify;
+}
+
+.game h6 {
+	margin: 0;
+	color: rgb(164, 164, 164);
+}
+
+.imgGame {
+	width: 30%;
+	text-align: center;
+	border-right: 1px solid black;
+}
+
+.imgGame img {
+	width: 100%;
+}
+
+#imgGameErro {
+	font-size: 14px;
+	padding: 45px 10px;
+	text-align: center;
+}
+
+.infoGame {
+	width: 70%;
+	float: right;
+	padding: 10px 15px;
+}
+
+#acoesGame {
+	margin-top: 10px;
+}
+
+#editarGame {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+#deletarGame {
+	text-decoration: none;
+	background-color: rgb(91, 91, 91);
+	color: white;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+
+
+.newsGames {
+	width: 45%;
+	padding-left: 20%;
+	text-align: justify;
+
+}
+
+.imgNews img {
+	width: 100%;
+	border-bottom: 1px solid rgb(14, 14, 14);
+}
+
+.infoNews {
+	padding: 5px 10px;
+	background-color: rgb(38, 38, 38);
+}
+
+.infoNews a {
+	text-decoration: none;
+	color: white;
+}
+
+.infoNews a:hover {
+	color: gray;
+}
+
+#borderNew {
+	border: 1px solid rgb(14, 14, 14);
+	margin-bottom: 20px;
 }

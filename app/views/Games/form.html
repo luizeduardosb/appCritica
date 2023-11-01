@@ -3,66 +3,77 @@
 
 <div class="container bg-tertiary-color text-dark-text-emphasis col-6">
 
-	<form action="@{Games.salvar}">
+	<form action="@{Games.salvar}" method="POST" enctype="multipart/form-data">
 
 		<input type="hidden" name="g.id" value="${g?.id}">
 
-			<div class="input-group mb-3">
-				<span class="input-group-text" id="basic-addon1">Game</span>
-				<input type="text" name="g.nome" value="${g?.nome}" class="form-control"
-					placeholder="Digite o nome do game" aria-label="Username" aria-describedby="basic-addon1" required>
-			</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="basic-addon1">Game</span>
+			<input type="text" name="g.nome" value="${g?.nome}" class="form-control" placeholder="Digite o nome do game"
+				aria-label="Username" aria-describedby="basic-addon1" required>
+		</div>
 
-			<div class="input-group mb-3">
-				<span class="input-group-text" id="basic-addon1">Gênero</span>
-				<input type="text" name="g.genero" value="${g?.genero}" class="form-control"
-					placeholder="Qual o gênero do game?" aria-label="Username" aria-describedby="basic-addon1" required>
-			</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="basic-addon1">Gênero</span>
+			<input type="text" name="g.genero" value="${g?.genero}" class="form-control"
+				placeholder="Qual o gênero do game?" aria-label="Username" aria-describedby="basic-addon1" required>
+		</div>
 
-			<div class="input-group mb-3">
-				<span class="input-group-text" id="basic-addon1">Desenvolvedor(a)</span>
-				<input type="text" name="g.desenvolvedor" value="${g?.desenvolvedor}" class="form-control"
-					placeholder="Qual o desenvolvedor(a) do game?" aria-label="Username" aria-describedby="basic-addon1"
-					required>
-			</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="basic-addon1">Desenvolvedor(a)</span>
+			<input type="text" name="g.desenvolvedor" value="${g?.desenvolvedor}" class="form-control"
+				placeholder="Qual o desenvolvedor(a) do game?" aria-label="Username" aria-describedby="basic-addon1"
+				required>
+		</div>
 
-			<label class="form-label">Plataformas suportadas</label>
-			<div class="form-check">
-				<input name="g.plataforma" class="form-check-input" type="checkbox" value="PlayStation"
-					id="flexCheckDefault">
-				<label class="form-check-label" for="flexCheckDefault">
-					Playstation
-				</label>
-			</div>
-			<div class="form-check">
-				<input name="g.plataforma" class="form-check-input" type="checkbox" value="Xbox" id="flexCheckChecked">
-				<label class="form-check-label" for="flexCheckChecked">
-					Xbox
-				</label>
-			</div>
-			<div class="form-check">
-				<input name="g.plataforma" class="form-check-input" type="checkbox" value="Windows"
-					id="flexCheckChecked">
-				<label class="form-check-label" for="flexCheckChecked">
-					Microsoft Windows
-				</label>
-			</div>
-			<div class="form-check">
-				<input name="g.plataforma" class="form-check-input" type="checkbox" value="Linux" id="flexCheckChecked">
-				<label class="form-check-label" for="flexCheckChecked">
-					Linux
-				</label>
-			</div>
+		<label class="form-label">Plataformas suportadas</label>
+		<div class="form-check">
+			<input name="g.plataforma" class="form-check-input" type="checkbox" value="PlayStation"
+				id="flexCheckDefault">
+			<label class="form-check-label" for="flexCheckDefault">
+				Playstation
+			</label>
+		</div>
+		<div class="form-check">
+			<input name="g.plataforma" class="form-check-input" type="checkbox" value="Xbox" id="flexCheckChecked">
+			<label class="form-check-label" for="flexCheckChecked">
+				Xbox
+			</label>
+		</div>
+		<div class="form-check">
+			<input name="g.plataforma" class="form-check-input" type="checkbox" value="Windows" id="flexCheckChecked">
+			<label class="form-check-label" for="flexCheckChecked">
+				Microsoft Windows
+			</label>
+		</div>
+		<div class="form-check">
+			<input name="g.plataforma" class="form-check-input" type="checkbox" value="Linux" id="flexCheckChecked">
+			<label class="form-check-label" for="flexCheckChecked">
+				Linux
+			</label>
+		</div>
 
-			<div id="data" class="input-group mb-3">
-				<span class="input-group-text" id="basic-addon1">Data de lançamento</span>
-				<input type="date" name="g.lancamento" value="${g?.lancamento}" class="form-control"
-					placeholder="Qual o gênero do game?" aria-label="Username" aria-describedby="basic-addon1" required>
-			</div>
+		<div id="data" class="input-group mb-3">
+			<span class="input-group-text" id="basic-addon1">Data de lançamento</span>
+			<input type="date" name="g.lancamento" value="${g?.lancamento}" class="form-control"
+				placeholder="Qual o gênero do game?" aria-describedby="basic-addon1" required>
+		</div>
 
-			<div id="submit" class="col-12">
-				<button class="btn btn-primary" type="submit">Adicionar game</button>
-			</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="basic-addon1">Breve descrição</span>
+			<textarea name="g.descricao" value="${g?.descricao}" class="form-control"></textarea>
+		</div>
+
+		Imagem do Game
+		<input type="file" name="foto">
+
+		#{if g?.id}
+		<img src="../uploads/${g.id}/${g.nomeFoto}">
+		#{/if}
+
+		<div id="submit" class="col-12">
+			<button class="btn btn-primary" type="submit">Adicionar game</button>
+		</div>
 
 	</form>
 </div>

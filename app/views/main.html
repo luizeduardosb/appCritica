@@ -21,13 +21,15 @@
 <body>
 
 	<header>
-		<h1><img src="/public/images/ld-logo.png">critcs</h1>
+		<a href="@{games.home}"><h1><img src="/public/images/ld-logo.png">critcs</h1></a>
 	</header>
 
 	<section class="menu">
-		<a href="@{criticas.form}">Fazer Critica</a>
-		<a href="@{criticas.listar}">Listar Criticas</a>
+		<a href="">Novidades</a>
+		<a href="@{criticas.form}">Fazer uma critica</a>
+		<a href="">E-sports</a>
 		<a href="@{games.form}">Adicionar Jogo</a>
+		<a href="">Comunidade</a>
 	</section>
 
 
@@ -36,29 +38,18 @@
 	<section id="contato">
 		<div class="contato">
 			<h4>Fale conosco</h4>
-			<p>Não seja timido(a)</p>
 			<ul>
 				<li>
-					<p>E-mail</p>
+					<h6>E-mail</h6>
 					<p>ldcritcs@gmail.com</p>
 				</li>
 				<li>
-					<p>Telefone</p>
+					<h6>Telefone</h6>
 					<p>(84) 98729-3509</p>
 				</li>
 				<li>
-					<button type="button" class="btn btn-primary" id="liveToastBtn" onclick="msgLive()">Clique aqui</button>
-					<div class="toast-container position-fixed bottom-0 end-0 p-3">
-						<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<strong class="me-auto">Olá, tudo bem?</strong>
-								<small>LDCritcs</small>
-								<button type="button" class="btn-close" data-bs-dismiss="toast"
-									aria-label="Close"></button>
-							</div>
-							<div class="toast-body">Dois reais ou um presente misterioso?</div>
-						</div>
-					</div>
+					<h6>Quem somos?</h6>
+					<p>Ainda não sabemos, mas iremos descobrir</p>
 				</li>
 			</ul>
 		</div>

@@ -1,5 +1,7 @@
 package controllers;
 
+
+import java.io.File;
 import java.util.List;
 
 import models.Critica;
@@ -12,9 +14,22 @@ public class Games extends Controller {
 		render();
 	}
 	
-	public static void salvar(Game g) {
+	public static void salvar(Game g, File foto) {
+
+		
+		g.nomeFoto = foto.getName();
 		g.save();
-		form();
+		
+		new File(".\\appCritica\\\\uploads\\" + g.id).mkdirs();
+		
+		File dest = new File(".\\appCritica\\uploads\\" + g.id + "\\" + foto.getName());
+		if (dest.exists()) {
+			dest.delete();
+		}
+		
+		foto.renameTo(dest);
+		
+		home();
 	}
 	
 	public static void home() {

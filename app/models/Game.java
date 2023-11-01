@@ -18,6 +18,8 @@ public class Game extends Model {
 	public String genero;
 	public String desenvolvedor;
 	public String plataforma;
+	public String descricao;
+	public String nomeFoto;
 	
 	
 	@Temporal(TemporalType.DATE)

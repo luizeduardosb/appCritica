@@ -61,15 +61,20 @@ public class Inicializador extends Job {
 			dudu.usuario = "@dudu";
 			dudu.senha = "dudu";
 			dudu.perfil = "admin";
+			dudu.save();
 			
 			Usuario danilo = new Usuario();
 			danilo.usuario = "@danilo";
 			danilo.senha = "danilo";
 			danilo.perfil = "admin";
+			danilo.save();
 			
 			Usuario lukita = new Usuario();
 			lukita.usuario = "@lukita";
 			lukita.senha = "lukita";
+			lukita.perfil = "comum";
+			lukita.save();
+			
 		}
 	}
 

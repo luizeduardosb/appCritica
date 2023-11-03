@@ -1,19 +1,24 @@
 package controllers;
 
-
 import java.io.File;
 import java.util.List;
 
+import annotations.Administrador;
 import models.Critica;
 import models.Game;
 import play.mvc.Controller;
+import play.mvc.With;
 
+
+@With(Seguranca.class)
 public class Games extends Controller {
 	
+	@Administrador
 	public static void form() {
 		render();
 	}
 	
+	@Administrador
 	public static void salvar(Game g, File foto, Long idCritica) {
 		if (idCritica != null) {
 			Critica c = Critica.findById(idCritica);
@@ -49,6 +54,7 @@ public class Games extends Controller {
 		renderTemplate("Games/detalhar.html", game, criticas);
 	}
 	
+	@Administrador
 	public static void editar(long id) {
 		Game g = Game.findById(id);
 		List<Critica> criticas = Critica.findAll();
@@ -56,6 +62,7 @@ public class Games extends Controller {
 		renderTemplate("Games/form.html", g, criticas);
 	}
 	
+	@Administrador
 	public static void deletar(long id) {
 		Game g = Game.findById(id);
 		g.delete();
@@ -64,6 +71,7 @@ public class Games extends Controller {
 		home();
 	}
 	
+	@Administrador
 	public static void removerCritica(Long idGame, Long idCritica) {
 		Game g = Game.findById(idGame);
 		Critica c = Critica.findById(idCritica);

@@ -1,27 +1,24 @@
 #{extends 'main.html' /}
 #{set title:'Entrar' /}
 
-<form action="@{Usuarios.entrar}" method="post">
-	<div class="form-header">
-		<div class="title">
-			<h1>Faça seu login</h1>
+<form class="login" action="@{Usuarios.entrar}" method="post">
+
+	<div class="login-form">
+		<h1>Faça seu login</h1>
+		<div>
+			<div class="user-form">
+				<label>Usuário</label>
+				<input type="text" name="usuario" placeholder="Digite seu nome de usuário">
+			</div>
+
+			<div>
+				<label>Senha</label>
+				<input type="password" name="senha" placeholder="Digite sua senha">
+			</div>
 		</div>
+
+	<button>Entrar</button>
+
 	</div>
 
-	<div class="input-group">
-
-		<div class="input-box">
-			<label>Usuario</label>
-			<input type="text" name="usuario" placeholder="Digite seu nome de usuário">
-		</div>
-
-		<div class="input-box">
-			<label>Senha</label>
-			<input type="password" name="senha" placeholder="Digite sua senha">
-		</div>
-	</div>
-
-	<div class="continue-button">
-		<button>Entrar</button>
-	</div>
 </form>

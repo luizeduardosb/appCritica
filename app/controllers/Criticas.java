@@ -5,7 +5,9 @@ import java.util.List;
 import models.Critica;
 import models.Game;
 import play.mvc.Controller;
+import play.mvc.With;
 
+@With(Seguranca.class)
 public class Criticas extends Controller {
 
 	public static void form() {

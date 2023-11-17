@@ -51,7 +51,9 @@
 		<a href="">Novidades</a>
 		<a href="@{criticas.form}">Fazer uma critica</a>
 		<a href="">E-sports</a>
+		#{if session['perfil'] == 'admin'}
 		<a href="@{games.form}">Adicionar Game</a>
+		#{/if}
 		<a href="">Comunidade</a>
 	</section>
 

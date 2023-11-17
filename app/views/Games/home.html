@@ -97,15 +97,17 @@
 					</div>
 
 					#{if g?.id}
-						#{list items:g.criticas, as:'c2'}
-							<p>${c2.usuario}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
-						#{/list}
+					#{list items:g.criticas, as:'c2'}
+					<p>${c2.id}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
+					#{/list}
 					#{/if}
 
+					#{if session['perfil'] == 'admin'}
 					<div id="acoesGame">
 						<a id="editarGame" href='@{Games.editar(g.id)}'>Editar</a>
 						<a id="deletarGame" href='@{Games.deletar(g.id)}'>Deletar</a>
 					</div>
+					#{/if}
 				</div>
 			</div>
 			#{/list}

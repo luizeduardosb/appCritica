@@ -20,7 +20,9 @@ public class Usuarios extends Controller {
 			usu.perfil = "comum";
 		}
 		
-		usu.usuario = "@" + usu.usuario;
+		if (!usu.usuario.contains("@")) {
+			usu.usuario = "@" + usu.usuario;
+		}
 		
 		usu.save();
 		Games.home();

@@ -312,6 +312,82 @@ section#jogos {
 }
 
 
+
+form.new-critica {
+	width: 65%;
+	margin: auto;
+	display: block;
+}
+
+form.new-critica h2 {
+	margin-top: 4vh;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.new-critica {
+	margin: 5vh 0;
+	display: flex;
+}
+
+.critica {
+	width: 70%;
+}
+
+.newsCritica {
+	width: 30%;
+	padding-left: 6vh;
+	text-align: justify;
+}
+
+#txt-spo.form-label {
+	margin-top: 2vh;
+}
+
+form.new-critica button {
+	margin-top: 2vh;
+	width: 40%;
+	background-color: rgb(14, 14, 14);
+	color: white;
+	border: 2px solid gray;
+	border-radius: 10px;
+	height: 38px;
+}
+
+
+
+
+.new-game {
+	width: 70%;
+	margin: auto;
+	margin-bottom: 5vh;
+}
+
+form.new-game h2{
+	text-align: center;
+	margin: 4vh;
+}
+
+#data.input-group.mb-3 {
+	margin-top: 2vh;
+}
+
+.new-game img {
+	width: 30vh;
+}
+
+.new-game button {
+	width: 40%;
+	background-color: rgb(14, 14, 14);
+	color: white;
+	border: 1px solid gray;
+	border-radius: 10px;
+	height: 35px;
+	margin-top: 3vh;
+}
+
+
 form.login {
 	margin: 5vh 0;
 }
@@ -347,6 +423,50 @@ form.login {
 }
 
 .login-form button {
+	width: 40%;
+	background-color: rgb(14, 14, 14);
+	color: white;
+	border: 1px solid gray;
+	border-radius: 10px;
+	height: 35px;
+}
+
+
+form.register {
+	margin: 5vh 0;
+}
+
+.register-form {
+	background-color: rgb(38, 38, 38);
+	padding: 4vh 5vh;
+	width: 40%;
+	margin: auto;
+}
+
+.register-form h1 {
+	margin-bottom: 4vh;
+}
+
+.register-form label{
+	width: 80%;
+	font-size: 20px;
+	margin-bottom: 1vh;
+}
+
+.register-form input {
+	background-color: rgb(38, 38, 38);
+	border: 0;
+	border-bottom: 2px solid black;
+	margin-bottom: 2vh;
+	width: 90%;
+	color: white;
+}
+
+.register-form input::placeholder {
+	color: gray;
+}
+
+.register-form button {
 	width: 40%;
 	background-color: rgb(14, 14, 14);
 	color: white;

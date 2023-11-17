@@ -4,6 +4,7 @@ import java.util.List;
 
 import models.Critica;
 import models.Game;
+import models.Usuario;
 import play.mvc.Controller;
 import play.mvc.With;
 
@@ -12,7 +13,8 @@ public class Criticas extends Controller {
 
 	public static void form() {
 		List<Game> games = Game.findAll();
-		render(games);
+		List<Usuario> usuarios = Usuario.findAll();
+		render(games, usuarios);
 	}
 
 	public static void salvar(Critica c) {
@@ -38,8 +40,9 @@ public class Criticas extends Controller {
 	public static void editar(long id) {
 		Critica c = Critica.findById(id);
 		List<Game> games = Game.findAll();
+		List<Usuario> usuarios = Usuario.findAll();
 
-		renderTemplate("Criticas/form.html", c, games);
+		renderTemplate("Criticas/form.html", c, games, usuarios);
 	}
 
 	public static void deletar(long id) {

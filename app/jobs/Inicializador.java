@@ -38,7 +38,6 @@ public class Inicializador extends Job {
 
 		if (Critica.count() == 0) {
 			Critica um = new Critica();
-			um.usuario = "dudu";
 			um.plataforma = "Windows";
 			um.nota = "99";
 			um.analise = "Jogo incrivel, muito bom! Um dos melhores "
@@ -48,7 +47,6 @@ public class Inicializador extends Job {
 			um.save();
 			
 			Critica dois = new Critica();
-			dois.usuario = "leco";
 			dois.plataforma = "Xbox";
 			dois.nota = "92";
 			dois.analise = "Massinha, mas bem mais ou menos, histórinha chata, o cara lá morre";
@@ -58,18 +56,21 @@ public class Inicializador extends Job {
 		
 		if (Usuario.count() == 0) {
 			Usuario dudu = new Usuario();
+			dudu.nome = "Luiz Eduardo";
 			dudu.usuario = "@dudu";
 			dudu.senha = "dudu";
 			dudu.perfil = "admin";
 			dudu.save();
 			
 			Usuario danilo = new Usuario();
+			danilo.nome = "Daniel da Madeira";
 			danilo.usuario = "@danilo";
 			danilo.senha = "danilo";
 			danilo.perfil = "admin";
 			danilo.save();
 			
 			Usuario lukita = new Usuario();
+			lukita.nome = "Lukita da galera";
 			lukita.usuario = "@lukita";
 			lukita.senha = "lukita";
 			lukita.perfil = "comum";
@@ -77,5 +78,4 @@ public class Inicializador extends Job {
 			
 		}
 	}
-
 }

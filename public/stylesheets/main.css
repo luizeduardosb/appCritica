@@ -258,6 +258,15 @@ section#jogos {
 	padding: 10px 15px;
 }
 
+.infoGame a {
+	text-decoration: none;
+	color: white;
+}
+
+.infoGame a:hover {
+	color: rgb(91, 91, 91);
+}
+
 #acoesGame {
 	margin-top: 10px;
 }
@@ -386,6 +395,35 @@ form.new-game h2{
 	height: 35px;
 	margin-top: 3vh;
 }
+
+
+form#form-detalhar {
+		margin: 5vh 17%
+}
+
+.game-detalhar {
+	display: flex;
+}
+
+.game-corpo {
+	width: 70%;
+}
+
+.game-det-img {
+	width: 30%;
+	border: 1px solid white;
+	padding-left: 4vh;
+}
+
+.game-det-img img {
+	width: 100%;
+}
+
+
+
+
+
+
 
 
 form.login {

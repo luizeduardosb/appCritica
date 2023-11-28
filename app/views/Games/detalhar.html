@@ -1,26 +1,48 @@
 #{extends 'main.html' /}
 #{set title:'Detalhar game'/}
 
-<form action="@{Games.detalhar}">
+<form id="form-detalhar" action="@{Games.detalhar}">
 
-	<div class="card mt-3">
-		<div class="card-header">
-			#{get 'title' /}: #${game.id}
+	<div class="game-detalhar">
+		<div class="game-corpo">
+			#{if session['perfil'] == 'admin'}
+			<p>Identificação do game: #${game.id}</p>
+			#{/if}
+			<h1>${game.nome}</h1>
+			<h6>${game.genero}</h6>
+			<h6>${game.desenvolvedor}</h6>
+			<p>${game.plataforma}</p>
+			<p>${game.descricao}</p>
+			<p>${game.lancamento.format('dd/MM/yyyy')}</p>
+			#{if session['perfil'] == 'admin'}
+			<a href="/games/form">Adicionar game</a>
+			#{/if}
+			<a href="@{games.home}">Página inicial</a>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title">${game.nome}</h5>
-			<p class="card-text">${game.genero}</p>
-			<p class="card-text">${game.desenvolvedor}</p>
-			<p class="card-text">${game.plataforma}</p>
-			<p class="card-text">${game.descricao}</p>
-			<p class="card-text">${game.lancamento.format('dd/MM/yyyy')}</p>
-			<a href="/games/form" class="btn btn-primary">Adicionar game</a>
-			<a href="@{games.home}" class="btn btn-primary">Home</a>
+		<div class="game-det-img">
+			#{if game?.nomeFoto}
+			<img src="../uploads/${game.id}/${game.nomeFoto}" alt="${game.nomeFoto}">
+			#{/if}
+			#{else}
+			<p id="imgGameErro">Que azar! A imagem foi passear, mas volta logo... (＾_＾）</p>
+			#{/else}
 		</div>
 	</div>
-#{if g?.id}
-#{list items:g.criticas, as:'c2'}
-<p>${c2.usuario}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
-#{/list}
-#{/if}
+
+	<div class="criticas-games">
+		#{list items:game.criticas, as:'critica'}
+		<div class="card-critica">
+			#{if session['perfil'] == 'admin'}
+			<p>Identificação do game: #${critica.id}</p>
+			#{/if}
+
+			<h3>${critica.nomeUser}</h3>
+			<p>${critica.plataforma}</p>
+			<p>${critica.data.format('dd/MM/yyyy')}</p>
+			
+			<p>${critica.nota}</p>
+			<p>${critica.analise}</p>
+		</div>
+		#{/list}
+	</div>
 </form>

@@ -23,7 +23,6 @@
 		#{list items:criticas, as:'c'}
 		<div>
 			<input type="checkbox" value="${c.id}" name="idCritica" />
-			<label>${c.usuario}</label>
 		</div>
 		#{/list}
 		#{/if}
@@ -80,15 +79,6 @@
 		<img src="../uploads/${g.id}/${g.nomeFoto}">
 		#{/if}
 
-			<button>Adicionar game</button>
-
+		<button>Adicionar game</button>
 	</div>
-
 </form>
-
-#{if g?.id}
-#{list items:g.criticas, as:'c2'}
-<a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
-<p>${c2.usuario}</p>
-#{/list}
-#{/if}

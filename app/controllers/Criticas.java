@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import models.Critica;
@@ -18,6 +19,10 @@ public class Criticas extends Controller {
 	}
 
 	public static void salvar(Critica c) {
+		c.nomeUser = session.get("user");
+		c.data = new Date();
+		
+		
 		c.save();
 		listar();
 	}

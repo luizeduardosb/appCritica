@@ -83,7 +83,6 @@
 					#{/if} #{else}
 					<p id="imgGameErro">Que azar! A imagem foi passear, mas volta logo... (＾_＾）</p>
 					#{/else}
-
 				</div>
 
 				<div class="infoGame">
@@ -95,19 +94,21 @@
 					<div id="plataformaGame">
 						<p>${g.plataforma}</p>
 					</div>
-
+					<!--
 					#{if g?.id}
 					#{list items:g.criticas, as:'c2'}
 					<p>${c2.id}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
 					#{/list}
 					#{/if}
+					-->
 
 					#{if session['perfil'] == 'admin'}
 					<div id="acoesGame">
-						<a id="editarGame" href='@{Games.editar(g.id)}'>Editar teste</a>
+						<a id="editarGame" href='@{Games.editar(g.id)}'>Editar</a>
 						<a id="deletarGame" href='@{Games.deletar(g.id)}'>Deletar</a>
 					</div>
-					#{/if}
+					#{/if} 
+
 				</div>
 			</div>
 			#{/list}

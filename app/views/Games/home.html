@@ -86,28 +86,29 @@
 				</div>
 
 				<div class="infoGame">
-					<a href="@{Games.detalhar(g.id)}">
-						<h5>${g.nome}</h5>
-					</a>
-					<h6>${g.desenvolvedor}</h6>
-					<p>${g.genero}</p>
-					<div id="plataformaGame">
-						<p>${g.plataforma}</p>
-					</div>
-					<!--
-					#{if g?.id}
-					#{list items:g.criticas, as:'c2'}
-					<p>${c2.id}</p> <a href="@{Games.removerCritica(g.id, c2.id)}">Remover</a>
-					#{/list}
-					#{/if}
-					-->
+					<div class="infoGame-info">
+						<a href="@{Games.detalhar(g.id)}">
+							<h3>${g.nome}</h3>
+						</a>
 
-					#{if session['perfil'] == 'admin'}
-					<div id="acoesGame">
-						<a id="editarGame" href='@{Games.editar(g.id)}'>Editar</a>
-						<a id="deletarGame" href='@{Games.deletar(g.id)}'>Deletar</a>
+						<h6>${g.desenvolvedor}</h6>
+						<p>${g.genero}</p>
+						<div id="plataformaGame">
+							<button type="button">${g.plataforma}</button>
+						</div>
+						<p id="descGame">${g.descricao}</p>
+
+						#{if session['perfil'] == 'admin'}
+						<div id="acoesGame">
+							<a id="editarGame" href='@{Games.editar(g.id)}'>Editar</a>
+							<a id="deletarGame" href='@{Games.deletar(g.id)}'>Deletar</a>
+						</div>
+						#{/if}
 					</div>
-					#{/if} 
+
+					<div class="mediaJogo">
+						<p id="mediaJogo">${controllers.Games.notaMedia(g.id)}</p>
+					</div>
 
 				</div>
 			</div>

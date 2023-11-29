@@ -256,15 +256,54 @@ section#jogos {
 	width: 70%;
 	float: right;
 	padding: 10px 15px;
+	display: flex;
 }
 
-.infoGame a {
+.infoGame-info {
+	width: 85%;
+	padding-right: 3vh;
+}
+
+.infoGame-info a {
 	text-decoration: none;
 	color: white;
 }
 
-.infoGame a:hover {
+.infoGame-info a:hover {
 	color: rgb(91, 91, 91);
+}
+
+.mediaJogo {
+	width: 13%;
+	text-align: right;
+}
+
+#mediaJogo {
+	background-color: white;
+	color: rgb(38, 38, 38);
+	text-align: center;
+	padding: 0.6vh 0;
+	font-size: 25px;
+	font-weight: bold;
+	border-radius: 9px;
+}
+
+#descGame {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: white;
+	margin-top: 1vh;
+}
+
+#plataformaGame button {
+	color: rgb(159, 159, 159);
+	background-color: rgb(38, 38, 38);
+	cursor: default;
+	border: 0.5px solid rgb(159, 159, 159);
+	margin-top: 0.5vh;
 }
 
 #acoesGame {
@@ -373,7 +412,7 @@ form.new-critica button {
 	margin-bottom: 5vh;
 }
 
-form.new-game h2{
+form.new-game h2 {
 	text-align: center;
 	margin: 4vh;
 }
@@ -396,27 +435,111 @@ form.new-game h2{
 	margin-top: 3vh;
 }
 
-
 form#form-detalhar {
-		margin: 5vh 17%
+	margin: 5vh 17%
 }
 
 .game-detalhar {
 	display: flex;
+	padding-bottom: 3vh;
+}
+
+.game-detalhar p {
+	margin: 0;
 }
 
 .game-corpo {
 	width: 70%;
 }
 
+.game-corpo-flex {
+	display: flex;
+}
+
+.nome-detalhar {
+	width: 84%
+}
+
+#descGame-detalhar {
+	margin-top: 3vh;
+}
+
+#mediaJogo-detalhar {
+	background-color: white;
+	color: #1f1f1f;
+	text-align: center;
+	padding: 1vh 0;
+	font-size: 30px;
+	font-weight: bold;
+	border-radius: 9px;
+}
+
 .game-det-img {
 	width: 30%;
-	border: 1px solid white;
 	padding-left: 4vh;
 }
 
 .game-det-img img {
 	width: 100%;
+}
+
+.criticas-games {
+	display: flex;
+}
+
+.divisoria-detalhar {
+	margin-top: 5vh;
+	padding-bottom: 1vh;
+	color: rgb(132, 132, 132);
+	border-bottom: 1px dashed rgb(108, 108, 108);
+	margin-bottom: 2vh;
+}
+
+.card-critica {
+	width: 40%;
+	padding-right: 4vh;
+}
+
+.card-critica-flex {
+	display: flex;
+}
+
+.card-critica-flex p {
+	font-size: 13px;
+	color: gray;
+}
+
+.card-critica-flex h5 {
+	padding: 0 10vh 0 2vh;
+	margin: 0;
+}
+
+.nome-plat {
+	display: block;
+}
+
+.nome-plat button {
+	margin: 0 10vh 0 2vh;
+}
+
+#plataformaGame-detalhar {
+	color: rgb(159, 159, 159);
+	background-color: rgb(38, 38, 38);
+	cursor: default;
+	border: 0.5px solid rgb(159, 159, 159);
+	font-size: 10px;
+}
+
+#notaJogo {
+	width: 60px;
+	background-color: white;
+	color: #1f1f1f;
+	text-align: center;
+	padding: 1vh 0;
+	font-size: 25px;
+	font-weight: bold;
+	border-radius: 7px;
+	margin-bottom: 4vh;
 }
 
 
@@ -441,7 +564,7 @@ form.login {
 	margin-bottom: 4vh;
 }
 
-.login-form label{
+.login-form label {
 	width: 80%;
 	font-size: 20px;
 	margin-bottom: 1vh;
@@ -485,7 +608,7 @@ form.register {
 	margin-bottom: 4vh;
 }
 
-.register-form label{
+.register-form label {
 	width: 80%;
 	font-size: 20px;
 	margin-bottom: 1vh;

@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
 
 import annotations.Administrador;
@@ -79,14 +80,19 @@ public class Games extends Controller {
 		editar(g.id);
 	}
 
-	/*
-	 * <<INCOMPLETO>>
-	 * 
-	 * public static void notaMedia(Critica c) { 
-	 * List<Critica> criticas = Critica.findAll();
-	 * 
-	 * int conv = Integer.parseInt(c.nota);
-	 * 
-	 * render(); }
-	 */
+	public static int notaMedia(Long gameId) {
+		Game game = Game.findById(gameId);
+
+		if (game != null && game.criticas != null && !game.criticas.isEmpty()) {
+			double somaNotas = 0;
+
+			for (Critica critica : game.criticas) {
+				somaNotas += Integer.parseInt(critica.nota);
+			}
+
+			return (int) (somaNotas / game.criticas.size());
+		} else {
+			return 0;
+		}
+	}
 }

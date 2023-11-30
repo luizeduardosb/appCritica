@@ -13,6 +13,11 @@
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/0407c4301f.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+		rel="stylesheet">
 
 	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
 	#{get 'moreStyles' /}
@@ -30,14 +35,14 @@
 		<div class="area-user">
 
 			#{if session['user']}
-				<a href="@{Usuarios.sair}">Sair</a>
-				<span>${session['user']}</span>
-				#{if session['perfil'] == 'admin'}
-					<i class="fa-solid fa-user-secret fa-xl" style="color: #ffffff;"></i>
-				#{/if}
-				#{else}
-					<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
-				#{/else}
+			<a href="@{Usuarios.sair}">Sair</a>
+			<span>${session['user']}</span>
+			#{if session['perfil'] == 'admin'}
+			<i class="fa-solid fa-user-secret fa-xl" style="color: #ffffff;"></i>
+			#{/if}
+			#{else}
+			<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+			#{/else}
 			#{/if}
 			#{else}
 			<a href="@{Usuarios.entrar}">Entrar</a>
@@ -57,6 +62,16 @@
 		<a href="">Comunidade</a>
 	</section>
 
+	#{if flash.success}
+	<div class="msgSucesso">
+		<span>${flash.success}</span>
+	</div>
+	#{/if}
+	#{if flash.error}
+	<div class="msgErro">
+		<span>${flash.error}</span>
+	</div>
+	#{/if}
 
 	#{doLayout /}
 

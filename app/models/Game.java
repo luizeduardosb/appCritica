@@ -12,16 +12,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import play.data.validation.Max;
+import play.data.validation.Min;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 @Entity
 public class Game extends Model {
 	
+	@Required
 	public String nome;
+	
+	@Required
 	public String genero;
+	
+	@Required
 	public String desenvolvedor;
+	
+	@Required
 	public String plataforma;
+	
+	@Required
+	@Min(50)
+	@Max(249)
 	public String descricao;
+	
+	@Required
 	public String nomeFoto;
 	
 	

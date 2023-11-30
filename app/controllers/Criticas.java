@@ -3,9 +3,12 @@ package controllers;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Cache;
+
 import models.Critica;
 import models.Game;
 import models.Usuario;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 import play.mvc.With;
 
@@ -18,28 +21,38 @@ public class Criticas extends Controller {
 		render(games, usuarios);
 	}
 
-	public static void salvar(Critica c) {
+	public static void salvar(@Valid Critica c) {
+		if (validation.hasErrors()) {
+			errosValidacao();
+		}
+
 		c.nomeUser = session.get("user");
-		c.data = new Date();
-		
 		
 		c.save();
-		listar();
+		flash.success("Comemora, nação! Sua crítica foi enviada com sucesso.");
+		Long gameId = c.game.id;
+		Games.detalhar(gameId);
 	}
 
-		public static void listar() {
+	private static void errosValidacao() {
+		params.flash();
+		validation.keep();
+		flash.error("Não sou especialista, mas creio que há um erro em seu formulário... Corrija e tente novamente");
+		form();
+	}
+
+	public static void listar() {
 		String busca = params.get("busca");
 		List<Critica> lista = Critica.findAll();
-		
+
 		if (busca == null || busca.isEmpty()) {
-			lista = Critica.findAll();			
+			lista = Critica.findAll();
 		} else {
-			lista = Critica.find("lower(spoiler) like ?1",
-					"%"+ busca.toLowerCase() +"%").fetch();
-		}	
-			
+			lista = Critica.find("lower(spoiler) like ?1", "%" + busca.toLowerCase() + "%").fetch();
+		}
+
 		render(lista, busca);
-		
+
 	}
 
 	public static void editar(long id) {

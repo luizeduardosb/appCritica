@@ -1,6 +1,7 @@
 body {
 	background-color: #1f1f1f;
 	color: white;
+	font-family: 'K2D', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -100,9 +101,7 @@ section#contato {
 .contato ul {
 	display: flex;
 	text-align: center;
-	padding-left: 20%;
-	padding-right: 20%;
-	padding-top: 20px;
+	padding: 20px 20% 0 20%;
 	margin: 0;
 }
 
@@ -127,9 +126,33 @@ footer p {
 	margin-bottom: 0;
 }
 
+.msgSucesso {
+	margin: 2vh 17%;
+	padding: 1vh 2vh;
+	background-color: darkgreen;
+	color: white;
+	font-size: 2.5vh;
+	opacity: 0.7;
+	border-radius: 5px;
+}
+
+.msgErro {
+	margin: 2vh 17%;
+	padding: 1vh 2vh;
+	background-color: darkred;
+	color: white;
+	font-size: 2.5vh;
+	opacity: 0.7;
+	border-radius: 5px;
+}
+
+.msgErro.login {
+	margin: 2vh 30%;
+}
+
 section#carrossel {
 	text-align: center;
-	padding-bottom: 20px;
+	padding-bottom: 4px;
 }
 
 .carousel-control-next {
@@ -485,6 +508,7 @@ form#form-detalhar {
 
 .criticas-games {
 	display: flex;
+	margin-bottom: 10vh;
 }
 
 .divisoria-detalhar {
@@ -542,6 +566,32 @@ form#form-detalhar {
 	margin-bottom: 4vh;
 }
 
+#paginaInicial-detalhar {
+	background-color: white;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #1f1f1f;
+	padding: 0.5vh 1vh;
+}
+
+#paginaInicial-detalhar:hover {
+	background-color: rgb(42, 42, 42);
+	color: white;
+}
+
+#adicionarGame-detalhar {
+	background-color: rgb(159, 159, 159);
+	border-radius: 8px;
+	text-decoration: none;
+	color: black;
+	padding: 0.5vh 1vh;
+	cursor: pointer;
+}
+
+#adicionarGame-detalhar:hover {
+	background-color: rgb(58, 58, 58);
+	color: white;
+}
 
 
 

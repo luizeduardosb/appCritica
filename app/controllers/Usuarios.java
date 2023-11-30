@@ -41,11 +41,13 @@ public class Usuarios extends Controller {
 	
 	public static void entrar(String usuario, String senha) {
 		Usuario usu = Usuario.find("usuario = ?1 and senha = ?2", usuario, senha).first();
+		
 		if (usu != null) {
 			session.put("user", usu.usuario);
 			session.put("perfil", usu.perfil);
 			Games.home();
 		} else {
+			flash.error("Usuário ou senha incorretos");
 			login();
 		}	
 	}

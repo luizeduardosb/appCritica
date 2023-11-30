@@ -20,12 +20,17 @@ public class Games extends Controller {
 
 	@Administrador
 	public static void salvar(Game g, File foto, Long idCritica) {
+		if (validation.hasErrors()) {
+			errosValidacao();
+		}
+		
 		if (idCritica != null) {
 			Critica c = Critica.findById(idCritica);
 			g.criticas.add(c);
 		}
 
 		g.nomeFoto = foto.getName();
+		flash.success("Comemora, nação! O game foi adicionado com sucesso.");
 		g.save();
 
 		new File(".\\appCritica\\\\uploads\\" + g.id).mkdirs();
@@ -36,8 +41,14 @@ public class Games extends Controller {
 		}
 
 		foto.renameTo(dest);
-
 		home();
+	}
+	
+	private static void errosValidacao() {
+		params.flash();
+		validation.keep();
+		flash.error("Não sou especialista, mas creio que há um erro em seu formulário... Corrija e tente novamente");
+		form();
 	}
 
 	public static void home() {

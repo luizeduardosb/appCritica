@@ -426,6 +426,18 @@ form.new-critica button {
 	height: 38px;
 }
 
+.input-group.mb-3 {
+	margin: 0 !important;
+}
+
+.inputs-critica {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+span.error {
+	color: red;
+}
 
 
 

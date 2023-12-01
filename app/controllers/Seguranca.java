@@ -6,7 +6,7 @@ import play.mvc.Controller;
 
 public class Seguranca extends Controller {
 	
-	@Before(unless="Games.home")
+	@Before(unless={"Games.home", "Games.detalhar"})
 	static void autenticacao() {
 		if (session.get("user") == null) {
 			Usuarios.login();

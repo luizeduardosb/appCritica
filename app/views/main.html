@@ -35,19 +35,19 @@
 		<div class="area-user">
 
 			#{if session['user']}
-			<a href="@{Usuarios.sair}">Sair</a>
-			<span>${session['user']}</span>
-			#{if session['perfil'] == 'admin'}
-			<i class="fa-solid fa-user-secret fa-xl" style="color: #ffffff;"></i>
+				<a href="@{Usuarios.sair}">Sair</a>
+				<span>${session['user']}</span>
+				#{if session['perfil'] == 'admin'}
+					<i class="fa-solid fa-user-secret fa-xl" style="color: #ffffff;"></i>
+				#{/if}
+				#{else}
+					<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+				#{/else}
 			#{/if}
 			#{else}
-			<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
-			#{/else}
-			#{/if}
-			#{else}
-			<a href="@{Usuarios.entrar}">Entrar</a>
-			<a id="espaco" href="@{Usuarios.register}">Cadastrar-se</a>
-			<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+				<a href="@{Usuarios.entrar}">Entrar</>
+				<a id="espaco" href="@{Usuarios.register}">Cadastrar-se</a>
+				<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
 			#{/else}
 		</div>
 	</header>

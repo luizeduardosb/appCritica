@@ -29,7 +29,7 @@ public class Criticas extends Controller {
 		c.nomeUser = session.get("user");
 		
 		c.save();
-		flash.success("Comemora, nação! Sua crítica foi enviada com sucesso.");
+		flash.success("Sua crítica foi enviada com sucesso.");
 		Long gameId = c.game.id;
 		Games.detalhar(gameId);
 	}
@@ -37,7 +37,10 @@ public class Criticas extends Controller {
 	private static void errosValidacao() {
 		params.flash();
 		validation.keep();
-		flash.error("Não sou especialista, mas creio que há um erro em seu formulário... Corrija e tente novamente");
+		flash.error("Não sou especialista, "
+				+ "mas creio que há um erro "
+				+ "em seu formulário... "
+				+ "Corrija e tente novamente");
 		form();
 	}
 

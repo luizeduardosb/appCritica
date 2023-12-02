@@ -30,7 +30,7 @@ public class Games extends Controller {
 		}
 
 		g.nomeFoto = foto.getName();
-		flash.success("Comemora, nação! O game foi adicionado com sucesso.");
+		flash.success("O game foi adicionado com sucesso.");
 		g.save();
 
 		new File(".\\appCritica\\\\uploads\\" + g.id).mkdirs();
@@ -106,4 +106,6 @@ public class Games extends Controller {
 			return 0;
 		}
 	}
+	
+	
 }

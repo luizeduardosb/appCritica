@@ -47,9 +47,15 @@ public class Usuarios extends Controller {
 			session.put("perfil", usu.perfil);
 			Games.home();
 		} else {
-			flash.error("Usuário ou senha incorretos");
-			login();
+			validacaoUser();
 		}	
+	}
+	
+	private static void validacaoUser() {
+		params.flash();
+		validation.keep();
+		flash.error("Usuário ou senha incorretos");
+		login();
 	}
 	
 	public static void sair() {

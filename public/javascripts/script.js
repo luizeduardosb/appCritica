@@ -10,3 +10,25 @@ function msgLive() {
 	}
 }
 
+
+$(document).ready(function() {
+    $("#cep").blur(function() {
+        var cep = $(this).val();
+
+        $.ajax({
+            type: "GET",
+            url: "https://viacep.com.br/ws/" + cep + "/json/",
+            success: function(data) {
+                $("#uf").val(data.uf);
+                $("#cidade").val(data.localidade);
+            },
+            error: function() {
+                alert("Erro ao buscar o endereço. Verifique o CEP digitado.");
+            }
+        });
+    });
+});
+
+
+
+

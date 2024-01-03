@@ -17,12 +17,25 @@
 
 			<div>
 				<label>Senha</label>
-				<input type="password" name="usu.senha" name="usu.senha" value="${usu?.senha}" placeholder="Digite sua senha">
+				<input type="password" name="usu.senha" name="usu.senha" value="${usu?.senha}"
+					placeholder="Digite sua senha">
 			</div>
+
+			<div>
+				<label>CEP</label>
+				<input type="text" id="cep" name="usu.cep" value="${c?.cep}" placeholder="Digite o CEP">
+
+				<label>Estado</label>
+				<input type="text" id="uf" name="usu.uf" value="${c?.uf}" placeholder="Digite o Estado">
+
+				<label>Cidade</label>
+				<input type="text" id="cidade" name="usu.cidade" value="${c?.cidade}" placeholder="Digite a Cidade">
+
+			</div>
+
 		</div>
 
 		<button>Cadastrar</button>
 
 	</div>
-
 </form>

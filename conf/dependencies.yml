@@ -3,3 +3,4 @@
 require:
     - play
     - play -> docviewer
+    - org.webjars -> jquery -> 3.6.0

@@ -20,6 +20,10 @@ public class Usuario extends Model {
 	@Required
 	public String senha;
 	public String perfil;
+	
+	public String cep;
+	public String uf;
+	public String cidade;
 }
 
 

@@ -4,6 +4,8 @@
 
 # Home page
 GET     /                                       Games.home
+GET     /buscarEndereco        Application.buscarEndereco
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

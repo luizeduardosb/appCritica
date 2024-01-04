@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import play.data.validation.InPast;
 import play.data.validation.Max;
 import play.data.validation.Min;
 import play.data.validation.Required;
@@ -42,6 +43,8 @@ public class Game extends Model {
 	
 	
 	@Temporal(TemporalType.DATE)
+	@Required
+	@InPast
 	public Date lancamento;
 	
 	@OneToMany

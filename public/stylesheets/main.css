@@ -116,9 +116,10 @@ section#contato {
 }
 
 #voltarTopo {
-	background-color: red;
-	padding: 2vh;
-	position: fixed;
+	background-color: #1f1f1f;
+	padding: 1vh 1.5vh;
+	float: right;
+	width: 4%;
 }
 
 footer {
@@ -126,10 +127,14 @@ footer {
 	text-align: center;
 	color: black;
 	padding: 3px 0;
+	display: flex;
 }
 
 footer p {
+	padding-top: 1vh;
+	padding-left: 10vh;
 	margin-bottom: 0;
+	width: 93%;
 }
 
 .msgSucesso {
@@ -661,6 +666,7 @@ form.login {
 }
 
 
+
 form.register {
 	margin: 5vh 0;
 }
@@ -674,11 +680,23 @@ form.register {
 
 .register-form h1 {
 	margin-bottom: 4vh;
+	text-align: center;
+	font-size: 7vh;
+}
+
+.register-form h3 {
+	color: rgb(180, 180, 180);
+	margin-bottom: 2vh;
+	font-weight: bold;
+}
+
+#endereco-register {
+	padding-top: 5vh;
 }
 
 .register-form label {
 	width: 80%;
-	font-size: 20px;
+	font-size: 17px;
 	margin-bottom: 1vh;
 }
 
@@ -686,7 +704,7 @@ form.register {
 	background-color: rgb(38, 38, 38);
 	border: 0;
 	border-bottom: 2px solid black;
-	margin-bottom: 2vh;
+	margin-bottom: 3vh;
 	width: 90%;
 	color: white;
 }
@@ -702,4 +720,40 @@ form.register {
 	border: 1px solid gray;
 	border-radius: 10px;
 	height: 35px;
+	margin-bottom: 10vh;
+	margin-top: 3vh;
+}
+
+.cepUF{
+	display: flex;
+}
+
+.cep {
+	display: flex;
+	width: 59%;
+}
+
+.cep label{
+	width: 20%;
+}
+
+.cep input {
+	width: 100%;
+}
+
+.uf {
+	display: flex;
+	width: 30%;
+}
+
+.uf label {
+	padding-left: 6vh;
+	width: 90%;
+}
+
+.uf select {
+	height: 4vh;
+	background-color: gray;
+	border: 1.5px solid black;
+	width: 40%;
 }

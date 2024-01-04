@@ -6,6 +6,7 @@
 	<div class="register-form">
 		<h1>Cadastre-se</h1>
 		<div>
+			<h3>Informações pessoais</h3>
 			<div class="usu-form">
 				<label>Nome</label>
 				<input type="text" name="usu.nome" value="${c?.usuario}" placeholder="Digite seu nome">
@@ -21,21 +22,53 @@
 					placeholder="Digite sua senha">
 			</div>
 
-			<div>
-				<label>CEP</label>
-				<input type="text" id="cep" name="usu.cep" value="${c?.cep}" placeholder="Digite o CEP">
 
-				<label>Estado</label>
-				<input type="text" id="uf" name="usu.uf" value="${c?.uf}" placeholder="Digite o Estado">
+			<div>
+				<h3 id="endereco-register">Endereço</h3>
+				
+				<div class="cepUF">
+					<div class="cep">
+						<label>CEP</label>
+						<input type="text" id="cep" name="usu.cep" value="${c?.cep}" placeholder="Digite o CEP">
+					</div>
+
+					<div class="uf">
+						<label>Estado</label>
+						<select id="uf" name="usu.uf" placeholder="Digite o Estado">
+							<option value="AC">AC</option>
+							<option value="AL">AL</option>
+							<option value="AP">AP</option>
+							<option value="AM">AM</option>
+							<option value="BA">BA</option>
+							<option value="CE">CE</option>
+							<option value="DF">DF</option>
+							<option value="ES">ES</option>
+							<option value="GO">GO</option>
+							<option value="MA">MA</option>
+							<option value="MT">MT</option>
+							<option value="MS">MS</option>
+							<option value="MG">MG</option>
+							<option value="PA">PA</option>
+							<option value="PB">PB</option>
+							<option value="PR">PR</option>
+							<option value="PE">PE</option>
+							<option value="PI">PI</option>
+							<option value="RJ">RJ</option>
+							<option value="RN">RN</option>
+							<option value="RS">RS</option>
+							<option value="RO">RO</option>
+							<option value="RR">RR</option>
+							<option value="SC">SC</option>
+							<option value="SP">SP</option>
+							<option value="SE">SE</option>
+							<option value="TO">TO</option>
+						</select>
+					</div>
+				</div>
 
 				<label>Cidade</label>
 				<input type="text" id="cidade" name="usu.cidade" value="${c?.cidade}" placeholder="Digite a Cidade">
-
 			</div>
-
+			<button>Cadastrar</button>
 		</div>
-
-		<button>Cadastrar</button>
-
-	</div>
 </form>

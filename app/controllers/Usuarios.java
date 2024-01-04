@@ -2,6 +2,8 @@ package controllers;
 
 import java.util.List;
 
+import models.Critica;
+import models.Game;
 import models.Usuario;
 import play.mvc.Controller;
 
@@ -16,6 +18,10 @@ public class Usuarios extends Controller {
 	}
 
 	public static void salvar(Usuario usu) {
+		if (validation.hasErrors()) {
+			errosValidacao();
+		}
+		
 		if (usu.perfil != "admin") {
 			usu.perfil = "comum";
 		}
@@ -58,9 +64,15 @@ public class Usuarios extends Controller {
 		login();
 	}
 	
+	private static void errosValidacao() {
+		params.flash();
+		validation.keep();
+		flash.error("Não sou especialista, mas creio que há um erro em seu formulário... Corrija e tente novamente");
+		register();
+	}
+	
 	public static void sair() {
 		session.clear();
 		Games.home();
-		
 	}
 }

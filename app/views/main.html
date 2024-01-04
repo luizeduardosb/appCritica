@@ -34,17 +34,20 @@
 				</a>
 			</div>
 			<div class="area-user">
-
 				#{if session['user']}
 				<a href="@{Usuarios.sair}">Sair</a>
 				<span>${session['user']}</span>
+
 				#{if session['perfil'] == 'admin'}
 				<i class="fa-solid fa-user-secret fa-xl" style="color: #ffffff;"></i>
 				#{/if}
+
 				#{else}
 				<i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
 				#{/else}
+
 				#{/if}
+
 				#{else}
 				<a href="@{Usuarios.entrar}">Entrar</a>
 				<a id="espaco" href="@{Usuarios.register}">Cadastrar-se</a>
@@ -75,8 +78,6 @@
 	</div>
 	#{/if}
 
-	<a id="voltarTopo" href="#inicio"><i class="fa-solid fa-chevron-up fa-xl" style="color: #000000;"></i></i></a>
-
 	#{doLayout /}
 
 	<section id="contato">
@@ -101,6 +102,8 @@
 
 	<footer>
 		<p>Copyright © 2023 | LDCritcs</p>
+		<a id="voltarTopo" href="#inicio"><i class="fa-solid fa-chevron-up fa-xl"
+				style="color: rgb(255, 255, 255);"></i></i></a>
 	</footer>
 
 	<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript"

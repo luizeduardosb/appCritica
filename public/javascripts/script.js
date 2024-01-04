@@ -19,8 +19,9 @@ $(document).ready(function() {
             type: "GET",
             url: "https://viacep.com.br/ws/" + cep + "/json/",
             success: function(data) {
-                $("#uf").val(data.uf);
                 $("#cidade").val(data.localidade);
+
+                $("#uf").val(data.uf);
             },
             error: function() {
                 alert("Erro ao buscar o endereço. Verifique o CEP digitado.");
@@ -28,6 +29,7 @@ $(document).ready(function() {
         });
     });
 });
+
 
 
 

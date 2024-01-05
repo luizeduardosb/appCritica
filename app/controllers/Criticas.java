@@ -66,11 +66,4 @@ public class Criticas extends Controller {
 		renderTemplate("Criticas/form.html", c, games, usuarios);
 	}
 
-	public static void deletar(long id) {
-		Critica c = Critica.findById(id);
-		c.delete();
-
-		listar();
-	}
-
 }

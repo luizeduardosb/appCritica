@@ -4,5 +4,6 @@
 
 validation.required=Campo de preenchimento obrigatório
 validation.minSize=O tamanho mínimo de caracteres não foi atingido
-validation.min=Informe um valor maior que 0
-validation.max=Informe um valor menor que 100
+validation.minSize=Este campo está ultrapassando o limite de caracteres
+validation.min=Informe um valor minimo
+validation.max=O valor ultrapassa o permitido

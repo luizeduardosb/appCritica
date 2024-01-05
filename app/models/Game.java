@@ -23,34 +23,22 @@ public class Game extends Model {
 	
 	@Required
 	public String nome;
-	
 	@Required
 	public String genero;
-	
 	@Required
 	public String desenvolvedor;
-	
 	@Required
 	public String plataforma;
-	
 	@Required
 	@Min(50)
 	@Max(249)
 	public String descricao;
-	
 	@Required
 	public String nomeFoto;
-	
-	
 	@Temporal(TemporalType.DATE)
 	@Required
-	@InPast
 	public Date lancamento;
-	
 	@OneToMany
 	@JoinColumn(name="idGame")
 	public List<Critica> criticas;
-	
-	
-
 }

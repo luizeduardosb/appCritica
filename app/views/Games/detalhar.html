@@ -52,6 +52,9 @@
 				<p>${critica.data.format('dd/MM/yyyy')}</p>
 			</div>
 			<p id="analise-detalhar">${critica.analise}</p>
+			<button type="button" class="btn btn-outline-secondary del">
+				<a href='@{Games.removerCritica(critica.id)}'>Deletar</a>
+			</button>
 		</div>
 		#{/list}
 	</div>

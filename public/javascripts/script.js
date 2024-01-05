@@ -1,16 +1,3 @@
-function msgLive() {
-	const toastTrigger = document.getElementById('liveToastBtn')
-	const toastLiveExample = document.getElementById('liveToast')
-
-	if (toastTrigger) {
-		const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-		toastTrigger.addEventListener('click', () => {
-			toastBootstrap.show()
-		})
-	}
-}
-
-
 $(document).ready(function() {
     $("#cep").blur(function() {
         var cep = $(this).val();
@@ -20,7 +7,6 @@ $(document).ready(function() {
             url: "https://viacep.com.br/ws/" + cep + "/json/",
             success: function(data) {
                 $("#cidade").val(data.localidade);
-
                 $("#uf").val(data.uf);
             },
             error: function() {

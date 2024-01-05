@@ -88,7 +88,7 @@ public class Games extends Controller {
 
 		g.criticas.remove(c);
 		g.save();
-		editar(g.id);
+		detalhar(idGame);
 	}
 
 	public static int notaMedia(Long gameId) {
